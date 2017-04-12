@@ -1,7 +1,5 @@
 # ScarJo
-ScarJo is a simple shell
-
-Your project’s name is the first thing people will see upon scrolling down to your README, and is included upon creation of your README file.
+ScarJo is a simple shell created as an end of term project for @holbertonschool.
 
 ### Table of Contents
 * [**Project Details**](#project-details)
@@ -16,7 +14,6 @@ Your project’s name is the first thing people will see upon scrolling down to 
 * [**Contributing**](#contributing)
 	* [Credits](#credits)
 	* [Resources](#resources)
-	
 ---
 
 ## Project Details
