@@ -9,13 +9,28 @@
 int _getline(char *input, int size)
 {
 	int i;
+	int readval;
+	struct stat sb;
 
-	_strprint(PROMPT);
+	if (fstat(STDIN_FILENO, &sb)== -1)
+	{
+		perror("stat: ");
+		exit(-1);
+	}
+	if ((sb.st_mode & S_IFMT) != S_IFIFO)
+		_strprint(PROMPT);
 	for (i = 0; i < size - 1; i++)
 	{
-		read(STDIN_FILENO, (input + i), 1);
+		readval = read(STDIN_FILENO, (input + i), 1);
+		if (readval == 0)
+		{
+			printf("EOF\n");
+			return (-1);
+		}
 		if (input[i] == '\n')
+		{
 			break;
+		}
 	}
 	i++;
 	input[i] = '\0';

@@ -14,6 +14,8 @@ int prompt(char *buffer, char *line)
 	{
 		clear_buffer(buffer);
 		chars_read = _getline(buffer, BUFF_SIZE);
+		if (chars_read == -1)
+			break;
 		/* need to handle if chars_read = BUFF_SIZE */
 
 		/* new_len starts from 0 and includes '\0' */
@@ -34,7 +36,7 @@ int prompt(char *buffer, char *line)
 		line_len = _strlen(line);
 		/* wasn't exit replace '\n' with '\0' */
 		line[line_len - 1] = '\0';
-		/* run_comand(line);*/
+		/*run_command(line);*/
 	}
 	free(line);
 	free(buffer);

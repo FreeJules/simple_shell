@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #define BUFF_SIZE 1024
 #define PROMPT "$ "
 /* error messages */
@@ -69,4 +71,6 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 /* prompt.c */
 int prompt(char *buffer, char *line);
+/* run_command */
+void run_command(char *line);
 #endif
