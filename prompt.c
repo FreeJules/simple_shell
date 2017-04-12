@@ -28,7 +28,6 @@ int prompt(char *buffer, char *line)
 		/* copy buffer content to new pointer of exact input size */
 		/* if input is bigger that buffer we can reallocate extra */
 		line = _memcpy(line, buffer, new_len);
-		printf("%s\n", line);
 		/* check if line = exit */
 		if (exit_shell(line))
 			break;
