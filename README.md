@@ -5,7 +5,7 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 * [**Project Details**](#project-details)
 	* [Description](#description)
 	* [Requirements](#requirements)
-    * [Support](#support)
+	* [Support](#support)
 * [**Getting Started**](#getting-started)
     * [Installation](#installation)
     * [Setup](#setup)
@@ -37,7 +37,13 @@ A description of your project follows. A good description is clear, short, and t
 ### Support
 
 ## Getting Started
+To use this shell first clone https://github.com/FreeJules/simple_shell.git
 ### Installation
+Clone this repository to your local machine by Your shell will be compiled this way:
+
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+
+
 Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
 
 ### Setup
