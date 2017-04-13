@@ -20,7 +20,6 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 
 ### Description
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
-
 Function | Description
 ---: | :---
 _getline.c | program description
@@ -34,6 +33,7 @@ more_strings.c | program description
 prints.c | program description
 shell.h | header file for **ScarJo shell**
 strings.c | program description
+
 
 
 ### Requirements
@@ -84,5 +84,5 @@ Larger projects often have sections on contributing to their project, in which c
 Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
 
 ### Resources
-Readme template from GitHub https://guides.github.com/features/wikis/
-Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
+* Readme template from GitHub https://guides.github.com/features/wikis/
+* Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
