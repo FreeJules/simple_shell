@@ -39,3 +39,44 @@ list_t *array_to_list(char **array)
 	}
 	return (head);
 }
+/**
+ * list_to_array - builds an array of pointers from linked list
+ * @head: head pointer of the list
+ * Return: pointer to array of pointers
+ */
+char **list_to_array(const list_t *head)
+{
+	size_t len, i;
+	const list_t *tmp;
+	char **array;
+
+	len = list_len(head);
+	array = malloc(sizeof(char *) * (len + 1));
+	tmp = head;
+	for (i = 0; i < len; i++)
+	{
+		array[i] = tmp->str;
+		tmp = tmp->next;
+	}
+	array[i] = NULL;
+	return (array);
+}
+/**
+ * free_array - frees a 2D array
+ * @array: array to free
+ * Return: none
+ */
+void free_array(char **array)
+{
+	int i, size;
+
+	size = arr_size(array);
+	if (*array == NULL || array == NULL)
+		return;
+	for (i = 0; i < size; i++)
+	{
+		if (array[i] != NULL)
+			free(array[i]);
+	}
+	free(array);
+}
