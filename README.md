@@ -40,18 +40,20 @@ A description of your project follows. A good description is clear, short, and t
 To use this shell first clone https://github.com/FreeJules/simple_shell.git
 ### Installation
 Clone this repository to your local machine by Your shell will be compiled this way:
-
+```C
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
 
-
-Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.
+*Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.*
 
 ### Setup
 
 ### Usage
-The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
-
-### Screenshots
+*The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.*
+Description | Screenshot
+:--- | :---
+ | 
+ | 
 
 ## Contributing
 Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for (setting guidelines for repository contributors)[https://help.github.com/articles/setting-guidelines-for-repository-contributors/].
