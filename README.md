@@ -64,3 +64,4 @@ Finally, include a section for the license of your project. For more information
 
 ### Resources
 Readme template from GitHub https://guides.github.com/features/wikis/
+Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
