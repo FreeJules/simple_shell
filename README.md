@@ -21,10 +21,11 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 ### Description
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
 
-Function | Description
----: | :---
-_getline.c | program description
-_strtok.c | program description
+Function | Description | Return value
+---: | :--- | :---
+\_getline.c | program description | none
+\_strtok.c | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
+
 array_list.c | program description
 environment.c | program description
 generate-authors.sh | program description
