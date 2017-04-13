@@ -56,8 +56,11 @@ The next section is usage, in which you instruct other people on how to use your
 ## Contributing
 Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for (setting guidelines for repository contributors)[https://help.github.com/articles/setting-guidelines-for-repository-contributors/].
 
-### Credits
-Include a section for credits in order to highlight and link to the authors of your project.
+### Team
+
+[![Julija Lee](https://avatars0.githubusercontent.com/u/6486822?v=3&s=460)](https://github.com/FreeJules/) | [![Elaine Yeung](https://avatars3.githubusercontent.com/u/23224088?v=3&s=460)](https://github.com/yeungegs)
+---|---
+[Julija Lee](https://github.com/FreeJules) <a target="_blank" href="https://twitter.com/leejulija"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a> | [Elaine Yeung](https://github.com/yeungegs) <a target="_blank" href="https://twitter.com/egsy"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a>
 
 ### License
 Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
