@@ -25,16 +25,15 @@ Function | Description | Return value
 ---: | :--- | :---
 \_getline.c | program description | none
 \_strtok.c | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
-
-array_list.c | program description
-environment.c | program description
-generate-authors.sh | program description
-lists.c | program description
-main.c | program description
-more_strings.c | program description
-prints.c | program description
-shell.h | header file for **ScarJo shell**
-strings.c | program description
+array_list.c | program description |
+environment.c | program description | 
+generate-authors.sh | program description |
+lists.c | program description |
+main.c | program description |
+more_strings.c | program description |
+prints.c | program description |
+shell.h | header file for **ScarJo shell** |
+strings.c | program description |
 
 	  
 
