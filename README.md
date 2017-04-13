@@ -46,15 +46,22 @@ In either case, on a successful call, *lineptr and *n will be updated to reflect
 File | Functions contained
 ---: | :---
 \_getline.c	|	int _getline(char *input, int size)<br>int exit_shell(char *line)  
-\_strtok.c	|	This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
-array_list.c	|	program description |
-environment.c | program description | 
-generate-authors.sh | program description |
-lists.c | program description |
-main.c | program description |
-more_strings.c | program description |
-prints.c | program description |
-strings.c | program description |
+\_strtok.c	|	int count_words(char *str, char delim)<br>int _wrdlen(char *s, char delim)<br>char **strtow(char *str, char delim)
+array_list.c	|	int arr_size(char **arr)<br>list_t *array_to_list(char **array)
+environment.c	|	char *_getenv(const char *name)<br>int _putenv(char *str)<br>int _setenv(const char *name, const char *value, int overwrite)<br>int _unsetenv(const char *name)<br>int delete_node(list_t **head, char *string)
+lists.c		|	size_t print_list(const list_t *h)
+size_t list_len(const list_t *h)
+list_t *add_node(list_t **head, const char *str)
+list_t *add_node_end(list_t **head, const char *str)
+void free_list(list_t *head)
+main.c		| |
+more_strings.c	| int _strcmp(char *s1, char *s2)<br>char *_strchr(const char *str, char c)<br>int len_to_char(char *str, char c)
+prints.c	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
+strings.c	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)
+char *_strcpy(char *dest, const char *src)
+char *_strcat(char *dest, const char *src)
+char *_strdup(char *str)
+
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
