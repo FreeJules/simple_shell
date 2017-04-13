@@ -1,13 +1,13 @@
 #include "shell.h"
 /**
- * prompt - calls getline until user enters exit
+ * cmd_line_loop - calls getline until user enters exit or EOF(ctrl^D)
 * @buffer: pointer to buffer to store input
 * @line: pointer to a string of line input
 * Return: 0 on success or 1 if _realloc failed
 */
-int prompt(char *buffer, char *line)
+int cmd_line_loop(char *buffer, char *line)
 {
-	int chars_read, line_len, old_len, new_len;
+	int chars_read, old_len, new_len;
 
 	/* call getline */
 	while (1)
@@ -33,10 +33,7 @@ int prompt(char *buffer, char *line)
 		/* check if line = exit */
 		if (exit_shell(line))
 			break;
-		line_len = _strlen(line);
-		/* wasn't exit replace '\n' with '\0' */
-		line[line_len - 1] = '\0';
-		/*run_command(line);*/
+		run_command(line);
 	}
 	free(line);
 	free(buffer);

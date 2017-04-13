@@ -4,7 +4,6 @@
  * @arr: array of pointers to strings
  * Return: size of the array
  */
-
 int arr_size(char **arr)
 {
 	int i;

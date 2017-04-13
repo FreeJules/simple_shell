@@ -12,7 +12,7 @@ int _getline(char *input, int size)
 	int readval;
 	struct stat sb;
 
-	if (fstat(STDIN_FILENO, &sb)== -1)
+	if (fstat(STDIN_FILENO, &sb) == -1)
 	{
 		perror("stat: ");
 		exit(-1);
@@ -28,11 +28,8 @@ int _getline(char *input, int size)
 			return (-1);
 		}
 		if (input[i] == '\n')
-		{
 			break;
-		}
 	}
-	i++;
 	input[i] = '\0';
 	return (i);
 }
@@ -45,7 +42,7 @@ int exit_shell(char *line)
 {
 	int cmp, lend, lline;
 
-	cmp = _strncmp(line, END, 4);
+	cmp = _strncmp(line, END, _strlen(END));
 	lend = _strlen(END);
 	lline = _strlen(line);
 	if (cmp == 0 && lend == lline)

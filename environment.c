@@ -22,14 +22,11 @@ char *_getenv(const char *name)
  */
 int _putenv(char *str)
 {
-
 	int namelen, envlen, equal, i;
 	char *tmp;
 	char **newenv;
-	/*
-	 * Find out how much of str to match when searching
-	 * for a string to replace.
-	 */
+
+	/* Find out how much of str to match when searching for it*/
 	tmp = _strchr(str, '=');
 	if (tmp == NULL)
 		perror("Invalid variable: no = found\n");
@@ -138,7 +135,7 @@ int _unsetenv(const char *name)
 	head = array_to_list(environ);
 	if (head == NULL)
 	{
-		perror (ENOMEM);
+		perror(ENOMEM);
 		return (-1);
 	}
 	node_ptr = _getenv(name);
