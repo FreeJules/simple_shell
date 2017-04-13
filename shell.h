@@ -57,6 +57,8 @@ char **strtow(char *str, char delim);
 /*  array_list.c */
 int arr_size(char **arr);
 list_t *array_to_list(char **array);
+char **list_to_array(const list_t *head);
+void free_array(char **array);
 /* environment.c */
 char *_getenv(const char *name);
 int _putenv(char *str);
