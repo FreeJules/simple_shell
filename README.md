@@ -23,7 +23,8 @@ A description of your project follows. A good description is clear, short, and t
 
 Function | Description | Return value
 ---: | :--- | :---
-\_getline.c | program description | none
+shell.h | header file for **ScarJo shell** | n/a
+\_getline.c | program description | Reads 
 \_strtok.c | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
 array_list.c | program description |
 environment.c | program description | 
@@ -32,10 +33,28 @@ lists.c | program description |
 main.c | program description |
 more_strings.c | program description |
 prints.c | program description |
-shell.h | header file for **ScarJo shell** |
 strings.c | program description |
 
-	  
+_getline() uses _strprint  reads an entire line from stream, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
+
+If *lineptr is NULL, then _getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in *n is ignored.)
+
+Alternatively,  before  calling  _getline(), *lineptr can contain a pointer to a malloc(3)-allocated buffer *n bytes in size.  If the buffer is not large enough to hold the line, _getline() resizes it with realloc(3), updating *lineptr and *n as necessary.
+
+In either case, on a successful call, *lineptr and *n will be updated to reflect the buffer address and allocated size respectively.
+
+File | Functions contained
+---: | :---
+\_getline.c	|	int _getline(char *input, int size)<br>int exit_shell(char *line)  
+\_strtok.c	|	This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
+array_list.c	|	program description |
+environment.c | program description | 
+generate-authors.sh | program description |
+lists.c | program description |
+main.c | program description |
+more_strings.c | program description |
+prints.c | program description |
+strings.c | program description |
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
