@@ -20,6 +20,7 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 
 ### Description
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
+
 Function | Description
 ---: | :---
 _getline.c | program description
@@ -34,7 +35,7 @@ prints.c | program description
 shell.h | header file for **ScarJo shell**
 strings.c | program description
 
-
+	  
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
