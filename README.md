@@ -21,27 +21,7 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 ### Description
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
 
-Function | Description | Return value
----: | :--- | :---
-[shell.h](/shell.h) | header file for **ScarJo shell** | n/a
-[\_getline.c](/_getline.c) | program description | Reads 
-[\_strtok.c](/_strtok.c) | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
-[array_list.c](/array_list.c) | program description |
-[environment.c](/environment.c) | program description | 
-[generate-authors.sh](/generate-authors.sh) | program description |
-[lists.c](/lists.c) | program description |
-[main.c](/main.c) | program description |
-[more_strings.c](/more_strings.c) | program description |
-[prints.c](/prints.c) | program description |
-[strings.c](/strings.c) | program description |
-
-_getline() uses _strprint  reads an entire line from stream, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
-
-If *lineptr is NULL, then _getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in *n is ignored.)
-
-Alternatively,  before  calling  _getline(), *lineptr can contain a pointer to a malloc(3)-allocated buffer *n bytes in size.  If the buffer is not large enough to hold the line, _getline() resizes it with realloc(3), updating *lineptr and *n as necessary.
-
-In either case, on a successful call, *lineptr and *n will be updated to reflect the buffer address and allocated size respectively.
+#### Function Prototypes
 
 File | Functions contained
 ---: | :---
@@ -53,6 +33,23 @@ File | Functions contained
 [more_strings.c](/more_strings.c)	| int _strcmp(char *s1, char *s2)<br>char *_strchr(const char *str, char c)<br>int len_to_char(char *str, char c)
 [prints.c](/prints.c)	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
 [strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
+
+Description of each program
+Function | Description | Return value
+---: | :--- | :---
+[shell.h](/shell.h) | header file for **ScarJo shell** | n/a
+[\_getline.c](/_getline.c) | program description | Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
+| If *input is NULL, then _getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in *n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
+[\_strtok.c](/_strtok.c) | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
+[array_list.c](/array_list.c) | program description |
+[environment.c](/environment.c) | program description | 
+[generate-authors.sh](/generate-authors.sh) | program description |
+[lists.c](/lists.c) | program description |
+[main.c](/main.c) | program description |
+[more_strings.c](/more_strings.c) | program description |
+[prints.c](/prints.c) | program description |
+[strings.c](/strings.c) | program description |
+
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
