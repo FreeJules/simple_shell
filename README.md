@@ -4,6 +4,8 @@ ScarJo is a simple shell created as an end of term project for @holbertonschool.
 ### Table of Contents
 * [**Project Details**](#project-details)
 	* [Description](#description)
+		* [Function Prototypes](#function-prototypes)
+		* [File descriptions](#file-descriptions)
 	* [Requirements](#requirements)
 	* [Support](#support)
 * [**Getting Started**](#getting-started)
@@ -34,13 +36,81 @@ File | Functions contained
 [prints.c](/prints.c)	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
 [strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
 
-Description of each program
+#### File descriptions
+
+#### File: [shell.h](/shell.h)
+- Description
+	- header file for **ScarJo shell**
+- Return value
+	- n/a
+
+#### File: [\_getline.c](/_getline.c) 
+- Description
+	- Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
+- Return value
+	- If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
+#### File: [\_strtok.c](/_strtok.c)
+- Description
+	- This program consists of three functions: count_words, \_wrdlen and strtow. 
+- Return value
+	- Returns string tokenized into words
+#### File: [[array_list.c](/array_list.c) | program description |
+- Description
+	- 
+- Return value
+	- 
+#### Function
+- Description
+	- 
+- Return value
+	- 
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[environment.c](/environment.c) | program description | 
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[generate-authors.sh](/generate-authors.sh) | program description |
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[lists.c](/lists.c) | program description |
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[main.c](/main.c) | program description |
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[more_strings.c](/more_strings.c) | program description |
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[prints.c](/prints.c) | program description |
+#### Function
+- Description
+	- 
+- Return value
+	- 
+[strings.c](/strings.c) | program description |
 
 Function | Description | Return value
 ---: | :--- | :---
 [shell.h](/shell.h) | header file for **ScarJo shell** | n/a
-[\_getline.c](/_getline.c) | program description | Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
-| If *input is NULL, then _getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in *n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
+[\_getline.c](/_getline.c) | Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.| If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
 [\_strtok.c](/_strtok.c) | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
 [array_list.c](/array_list.c) | program description |
 [environment.c](/environment.c) | program description | 
