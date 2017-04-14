@@ -54,58 +54,51 @@ File | Functions contained
 	- This program consists of three functions: count_words, \_wrdlen and strtow. 
 - Return value
 	- Returns string tokenized into words
-#### File: [[array_list.c](/array_list.c) | program description |
+##### File: [[array_list.c](/array_list.c) | program description |
 - Description
 	- 
 - Return value
 	- 
-#### Function
+##### File: [environment.c](/environment.c)
 - Description
 	- 
 - Return value
 	- 
-#### Function
+##### File: [generate-authors.sh](/generate-authors.sh)
 - Description
 	- 
 - Return value
 	- 
-[environment.c](/environment.c) | program description | 
-#### Function
+##### File:[lists.c](/lists.c)
 - Description
 	- 
 - Return value
 	- 
-[generate-authors.sh](/generate-authors.sh) | program description |
-#### Function
+##### File: [main.c](/main.c)
 - Description
 	- 
 - Return value
 	- 
-[lists.c](/lists.c) | program description |
-#### Function
+##### File: [more_strings.c](/more_strings.c)
 - Description
 	- 
 - Return value
 	- 
-[main.c](/main.c) | program description |
-#### Function
+##### File: [prints.c](/prints.c)
 - Description
 	- 
 - Return value
 	- 
-[more_strings.c](/more_strings.c) | program description |
-#### Function
+##### File: [strings.c](/strings.c)
 - Description
 	- 
 - Return value
 	- 
-[prints.c](/prints.c) | program description |
-#### Function
+##### File: 
 - Description
 	- 
 - Return value
 	- 
-[strings.c](/strings.c) | program description |
 
 Function | Description | Return value
 ---: | :--- | :---
@@ -120,7 +113,6 @@ Function | Description | Return value
 [more_strings.c](/more_strings.c) | program description |
 [prints.c](/prints.c) | program description |
 [strings.c](/strings.c) | program description |
-
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
