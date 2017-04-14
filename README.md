@@ -59,6 +59,7 @@ File | Functions contained
        returns NULL.
 - Return value
 	- Returns string tokenized into words
+	- The _strtok() functions return a pointer to the next token, or NULL if there are no more tokens.
 ##### File: [array_list.c](/array_list.c)
 - Description
 	- This program builds a linke list of an array of pointers
