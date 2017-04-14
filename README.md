@@ -56,7 +56,7 @@ File | Functions contained
 	- Returns string tokenized into words
 ##### File: [array_list.c](/array_list.c)
 - Description
-	- 
+	-
 - Return value
 	- 
 ##### File: [environment.c](/environment.c)
