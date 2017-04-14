@@ -31,7 +31,9 @@ int _putenv(char *str)
 	 * for a string to replace.
 	 */
 	tmp = _strchr(str, '=');
-	namelen = find_len(str, '=');
+	if (tmp == NULL)
+		perror("Invalid variable: no = found\n");
+	namelen = len_to_char(str, '=');
 	namelen++;
 	/* Search for an existing string in the environment and find the */
 	/* length of environ.  If found, replace and exit. */
@@ -83,12 +85,12 @@ int _setenv(const char *name, const char *value, int overwrite)
 /* or  contains an '=' character  */
 	if (((name[0] == '\0') != 0) || (_strchr(name, '=') != NULL))
 	{
-		perror("Invalid argument");
+		perror(EINVAL);
 		return (-1);
 	}
 	if ((name == NULL) || (value == NULL))
 	{
-		perror("Out of memory");
+		perror(ENOMEM);
 		return (-1);
 	}
 /* use _getenv(name) to get a pointer to string of variable */
@@ -101,7 +103,7 @@ int _setenv(const char *name, const char *value, int overwrite)
 	/* +2 for '=' and null terminator */
 	if (new_ptr == NULL)
 	{
-		perror("Out of memory");
+		perror(ENOMEM);
 		return (-1);
 	}
 /*create a string with new variable name and a value */
@@ -130,13 +132,13 @@ int _unsetenv(const char *name)
 	equal = _strchr(name, '=');
 	if ((name == NULL) || ((name[0] == '\0') != 0) || (equal != NULL))
 	{
-		errno = EINVAL;
+		perror(EINVAL);
 		return (-1);
 	}
-	head = path_dirs_list(environ);
+	head = array_to_list(environ);
 	if (head == NULL)
 	{
-		errno = ENOMEM;
+		perror (ENOMEM);
 		return (-1);
 	}
 	node_ptr = _getenv(name);

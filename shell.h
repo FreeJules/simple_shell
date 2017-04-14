@@ -4,8 +4,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/types.h>
+#include <sys/stat.h>
 #define BUFF_SIZE 1024
 #define PROMPT "$ "
+/* error messages */
+#define EINVAL "Invalid argument"
+#define ENOMEM "Out of memory"
+#define ERROR "Error"
+#define WRONG "Something went wrong"
+#define END "exit\n"
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -21,6 +29,7 @@ typedef struct list_s
 	unsigned int len;
 	struct list_s *next;
 } list_t;
+extern char **environ;
 /* lists.c */
 size_t print_list(const list_t *h);
 size_t list_len(const list_t *h);
@@ -57,4 +66,11 @@ int delete_node(list_t **head, char *string);
 /* _getline.c */
 int _getline(char *input, int size);
 int exit_shell(char *line);
+void clear_buffer(char *buffer);
+char *_memcpy(char *dest, char *src, unsigned int n);
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+/* prompt.c */
+int prompt(char *buffer, char *line);
+/* run_command */
+void run_command(char *line);
 #endif
