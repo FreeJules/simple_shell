@@ -35,6 +35,7 @@ File | Functions contained
 [strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
 
 Description of each program
+
 Function | Description | Return value
 ---: | :--- | :---
 [shell.h](/shell.h) | header file for **ScarJo shell** | n/a
