@@ -63,12 +63,21 @@ File | Functions contained
 - Description
 	- Contains helper functions that interact with environment variables.
 	  - *\_getenv(const char *name) - searches environment list to find environment variable _name_ and returns a pointer to the corresponding _value_ string.
-	  - int \_putenv(char *str) - 
+	  - int \_putenv(char *str) - changes or adds an environment variable 
+The putenv() function adds or changes the value of environment variables.  The argument string is of the form name=value.  If name does not already exist in the environment, then string is added  to the environment.  If name does exist, then the value of name in the environment is changed to  value.   The  string pointed  to  by  string  becomes  part  of the environment, so altering the string changes the environment.
 	  - int \_setenv(const char *name, const char *value, int overwrite)
 	  - int \_unsetenv(const char *name)
 	  - int delete_node(list_t **head, char *string)
+
 - Return value
-	- 
+	- *\_getenv(const char *name)
+	- int \_putenv(char *str)
+	-  int \_setenv(const char *name, const char *value, int overwrite)
+	- int \_unsetenv(const char *name)
+	- int delete_node(list_t **head, char *string)
+RETURN VALUE 
+The putenv() function returns zero on success, or  nonzero  if an  error  occurs.   In the event of an error, errno is set to indicate the cause.
+
 
 
 
