@@ -44,14 +44,19 @@ File | Functions contained
 - Return value
 	- n/a
 
-##### File: [\_getline.c](/_getline.c) 
+##### File: [\_getline.c](/_getline.c)
 - Description
 	- Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
 - Return value
 	- If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
 ##### File: [\_strtok.c](/_strtok.c)
 - Description
-	- This program consists of three functions: count_words, \_wrdlen and strtow. 
+	- This program is our implementation of the strtok function which extracts tokens from strings.
+	- The  \_strtok()  function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to \_strtok() the string to be parsed should be specified in str.  In each subsequent
+       call that should parse the same string, str must be NULL.
+       - The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings in delim in successive calls that parse the same string.
+       - Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte.   If  no  more  tokens  are  found,  \_strtok()
+       returns NULL.
 - Return value
 	- Returns string tokenized into words
 ##### File: [array_list.c](/array_list.c)
