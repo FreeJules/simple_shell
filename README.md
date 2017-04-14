@@ -61,14 +61,28 @@ File | Functions contained
 	- A pointer of type `list_t` to head
 ##### File: [environment.c](/environment.c)
 - Description
-	- 
+	- Contains helper functions that interact with environment variables.
+	  - *\_getenv(const char *name) - searches environment list to find environment variable _name_ and returns a pointer to the corresponding _value_ string.
+	  - int \_putenv(char *str) - 
+	  - int \_setenv(const char *name, const char *value, int overwrite)
+	  - int \_unsetenv(const char *name)
+	  - int delete_node(list_t **head, char *string)
 - Return value
 	- 
+
+
+
 ##### File: [generate-authors.sh](/generate-authors.sh)
 - Description
-	- 
+	- This shell script is a simplified version of Docker's generate-authors script.
 - Return value
 	- 
+[lists.c](/lists.c)		|	size_t print_list(const list_t *h)<br>size_t list_len(const list_t *h)<br>list_t *add_node(list_t **head, const char *str)<br>list_t *add_node_end(list_t **head, const char *str)<br>void free_list(list_t *head)
+[more_strings.c](/more_strings.c)	| int _strcmp(char *s1, char *s2)<br>char *_strchr(const char *str, char c)<br>int len_to_char(char *str, char c)
+[prints.c](/prints.c)	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
+[strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
+
+
 ##### File:[lists.c](/lists.c)
 - Description
 	- 
