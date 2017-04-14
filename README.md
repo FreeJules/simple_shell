@@ -56,9 +56,9 @@ File | Functions contained
 	- Returns string tokenized into words
 ##### File: [array_list.c](/array_list.c)
 - Description
-	- This program
+	- This program builds a linke list of an array of pointers
 - Return value
-	- Returns
+	- A pointer of type `list_t` to head
 ##### File: [environment.c](/environment.c)
 - Description
 	- 
