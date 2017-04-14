@@ -54,7 +54,7 @@ File | Functions contained
 	- This program consists of three functions: count_words, \_wrdlen and strtow. 
 - Return value
 	- Returns string tokenized into words
-##### File: [[array_list.c](/array_list.c) | program description |
+##### File: [[array_list.c](/array_list.c)
 - Description
 	- 
 - Return value
