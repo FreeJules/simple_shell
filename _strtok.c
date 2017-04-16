@@ -13,7 +13,7 @@ int count_words(char *str, char delim)
 	count = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] != delim && (str[i + 1] == delim || str[i + 1] == '\0'))
+		if (str[i] != delim && (str[i + 1] == delim || str[i + 1] == '\0' || str[i + 1] == '\t'))
 			count++;
 		i++;
 	}
@@ -29,7 +29,7 @@ int _wrdlen(char *s, char delim)
 {
 	int count = 0;
 
-	while (*(s + count) != delim && *(s + count) != '\0')
+	while (*(s + count) != delim && *(s + count) != '\0' && *(s + count) != '\t')
 		count++;
 	return (count);
 }
@@ -56,7 +56,7 @@ char **strtow(char *str, char delim)
 	j = 0;
 	while (str[i] != '\0')
 	{
-		while (str[i] == delim && str[i] != '\0')
+		while ((str[i] == delim || str[i] == '\t' ) && str[i] != '\0')
 			i++;
 		if (str[i] == '\0')
 		{

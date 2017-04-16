@@ -6,6 +6,10 @@
 #include <string.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+<<<<<<< HEAD
+=======
+#include <sys/wait.h>
+>>>>>>> jbranch
 #define BUFF_SIZE 1024
 #define PROMPT "$ "
 /* error messages */
@@ -13,7 +17,11 @@
 #define ENOMEM "Out of memory"
 #define ERROR "Error"
 #define WRONG "Something went wrong"
+<<<<<<< HEAD
 #define END "exit\n"
+=======
+#define END "exit"
+>>>>>>> jbranch
 /**
  * struct list_s - singly linked list
  * @str: string - (malloc'ed string)
@@ -57,6 +65,8 @@ char **strtow(char *str, char delim);
 /*  array_list.c */
 int arr_size(char **arr);
 list_t *array_to_list(char **array);
+char **list_to_array(const list_t *head);
+void free_array(char **array);
 /* environment.c */
 char *_getenv(const char *name);
 int _putenv(char *str);
@@ -69,8 +79,17 @@ int exit_shell(char *line);
 void clear_buffer(char *buffer);
 char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
+<<<<<<< HEAD
 /* prompt.c */
 int prompt(char *buffer, char *line);
 /* run_command */
 void run_command(char *line);
+=======
+/* cmd_line_loop.c */
+int cmd_line_loop(char *buffer, char *line);
+/* run_command */
+char **path_dirs_array(void);
+char *cmd_in_path(char *str);
+int run_command(char *str);
+>>>>>>> jbranch
 #endif

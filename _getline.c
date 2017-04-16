@@ -12,7 +12,11 @@ int _getline(char *input, int size)
 	int readval;
 	struct stat sb;
 
+<<<<<<< HEAD
 	if (fstat(STDIN_FILENO, &sb)== -1)
+=======
+	if (fstat(STDIN_FILENO, &sb) == -1)
+>>>>>>> jbranch
 	{
 		perror("stat: ");
 		exit(-1);
@@ -32,7 +36,6 @@ int _getline(char *input, int size)
 			break;
 		}
 	}
-	i++;
 	input[i] = '\0';
 	return (i);
 }
@@ -45,7 +48,11 @@ int exit_shell(char *line)
 {
 	int cmp, lend, lline;
 
+<<<<<<< HEAD
 	cmp = _strncmp(line, END, 4);
+=======
+	cmp = _strncmp(line, END, _strlen(END));
+>>>>>>> jbranch
 	lend = _strlen(END);
 	lline = _strlen(line);
 	if (cmp == 0 && lend == lline)
