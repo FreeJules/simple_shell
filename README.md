@@ -55,11 +55,10 @@ File | Functions contained
 	- The  \_strtok()  function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to \_strtok() the string to be parsed should be specified in str.  In each subsequent
        call that should parse the same string, str must be NULL.
        - The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings in delim in successive calls that parse the same string.
-       - Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte.   If  no  more  tokens  are  found,  \_strtok()
-       returns NULL.
+       - Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte.   If  no  more  tokens  are  found,  \_strtok() returns NULL.
 - Return value
 	- Returns string tokenized into words
-	- The _strtok() functions return a pointer to the next token, or NULL if there are no more tokens.
+	- The \_strtok() functions return a pointer to the next token, or NULL if there are no more tokens.
 ##### File: [array_list.c](/array_list.c)
 - Description
 	- This program builds a linke list of an array of pointers
@@ -68,66 +67,74 @@ File | Functions contained
 ##### File: [environment.c](/environment.c)
 - Description
 	- Contains helper functions that interact with environment variables.
-	  - *\_getenv(const char *name) - searches environment list to find environment variable _name_ and returns a pointer to the corresponding _value_ string.
-	  - int \_putenv(char *str) - changes or adds an environment variable 
-The putenv() function adds or changes the value of environment variables.  The argument string is of the form name=value.  If name does not already exist in the environment, then string is added  to the environment.  If name does exist, then the value of name in the environment is changed to  value.   The  string pointed  to  by  string  becomes  part  of the environment, so altering the string changes the environment.
-	  - int \_setenv(const char *name, const char *value, int overwrite)
-	  - int \_unsetenv(const char *name)
-	  - int delete_node(list_t **head, char *string)
-
+	  - `*_getenv(const char *name)` - searches environment list to find environment variable _name_ and returns a pointer to the corresponding _value_ string.
+	  - `int _putenv(char *str)` - changes or adds an environment variable
+		- The putenv() function adds or changes the value of environment variables.  The argument string is of the form name=value.  If name does not already exist in the environment, then string is added  to the environment.  If name does exist, then the value of name in the environment is changed to  value.   The  string pointed  to  by  string  becomes  part  of the environment, so altering the string changes the environment.
+	  - `int _setenv(const char *name, const char *value, int overwrite)`
+	  - `int \_unsetenv(const char *name)`
+	  - `int delete_node(list\_t **head, char *string)`
 - Return value
-	- *\_getenv(const char *name)
+	- *_getenv(const char *name)
 	- int \_putenv(char *str)
+		- RETURN VALUE  The putenv() function returns zero on success, or  nonzero  if an  error  occurs.   In the event of an error, errno is set to indicate the cause.
 	-  int \_setenv(const char *name, const char *value, int overwrite)
 	- int \_unsetenv(const char *name)
 	- int delete_node(list_t **head, char *string)
-RETURN VALUE 
-The putenv() function returns zero on success, or  nonzero  if an  error  occurs.   In the event of an error, errno is set to indicate the cause.
-
-
-
 
 ##### File: [generate-authors.sh](/generate-authors.sh)
 - Description
 	- This shell script is a simplified version of Docker's generate-authors script.
 - Return value
-	- 
-[lists.c](/lists.c)		|	size_t print_list(const list_t *h)<br>size_t list_len(const list_t *h)<br>list_t *add_node(list_t **head, const char *str)<br>list_t *add_node_end(list_t **head, const char *str)<br>void free_list(list_t *head)
-[more_strings.c](/more_strings.c)	| int _strcmp(char *s1, char *s2)<br>char *_strchr(const char *str, char c)<br>int len_to_char(char *str, char c)
-[prints.c](/prints.c)	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
-[strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
-
+	- returns
 
 ##### File:[lists.c](/lists.c)
 - Description
-	- 
+	- `print_list(const list_t *h)`
+	- `size_t list_len(const list_t *h)`
+	- `list_t *add_node(list_t **head, const char *str)`
+	- `list_t *add_node_end(list_t **head, const char *str)`
+	- `void free_list(list_t *head)`
 - Return value
-	- 
+	- return
+	
 ##### File: [main.c](/main.c)
 - Description
-	- 
+	- description
 - Return value
-	- 
+	- return
+	
 ##### File: [more_strings.c](/more_strings.c)
 - Description
-	- 
+	- int _strcmp(char *s1, char *s2)
+	- char *_strchr(const char *str, char c)
+	- int len_to_char(char *str, char c)
+	- int _putchar(char c)
+	- void _strprint(char *str)
+	- void print_array(char **array)
 - Return value
-	- 
+	- return
+	
 ##### File: [prints.c](/prints.c)
 - Description
-	- 
+	- description
 - Return value
-	- 
+	- return
+	
 ##### File: [strings.c](/strings.c)
 - Description
-	- 
+	- _strlen(const char *s)
+	- int _strncmp(char *s1, const char *s2, int n)
+	- char *_strcpy(char *dest, const char *src)
+	- char *_strcat(char *dest, const char *src)
+	- char *_strdup(char *str)
 - Return value
-	- 
+	- return
+	
 ##### File: 
 - Description
-	- 
+	- description
 - Return value
-	- 
+	- return
 
 Function | Description | Return value
 ---: | :--- | :---
