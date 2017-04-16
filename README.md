@@ -48,7 +48,10 @@ File | Functions contained
 - Description
 	- Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
 - Return value
-	- If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
+	- If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)
+	- On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.
+	- Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.
+	
 ##### File: [\_strtok.c](/_strtok.c)
 - Description
 	- This program is our implementation of the strtok function which extracts tokens from strings.
@@ -59,11 +62,13 @@ File | Functions contained
 - Return value
 	- Returns string tokenized into words
 	- The \_strtok() functions return a pointer to the next token, or NULL if there are no more tokens.
+
 ##### File: [array_list.c](/array_list.c)
 - Description
 	- This program builds a linke list of an array of pointers
 - Return value
 	- A pointer of type `list_t` to head
+
 ##### File: [environment.c](/environment.c)
 - Description
 	- Contains helper functions that interact with environment variables.
@@ -138,7 +143,7 @@ File | Functions contained
 
 Function | Description | Return value
 ---: | :--- | :---
-[shell.h](/shell.h) | header file for **ScarJo shell** | n/a
+[shell.h](/shell.h) | header file for **ScarJo shell** |
 [\_getline.c](/_getline.c) | Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.| If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
 [\_strtok.c](/_strtok.c) | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
 [array_list.c](/array_list.c) | program description |
