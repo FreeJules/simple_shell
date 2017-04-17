@@ -22,8 +22,16 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 
 ### Description
 A description of your project follows. A good description is clear, short, and to the point. Describe the importance of your project, and what it does.
-
+ScarJo Shell (hsh) is a simple UNIX command line shell and was built as an end of term project for [Holberton School](https://github.com/holbertonschool/). ScarJo includes many basic features present in the bash shell.
 #### Function Prototypes
+
+File Functions contained | Description and Return value |
+------ | :---
+[shell.h](/shell.h)		n/a | <ul><li>Description</li>  <ul><li>header file for **ScarJo shell**</li></ul><li>Return value</li><ul><li>n/a</li></ul></ul> |
+[\_getline.c](/_getline.c)	int _getline(char *input, int size)<br>int exit_shell(char *line) | <ul><li>Description</li>	<ul><li>\_getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.</li></ul><li>Return value</li>	<ul><li>If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)</li>	<li>On  success,  \_getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.</li>	<li>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.</li></ul></ul>
+[\_strtok.c](/_strtok.c)		int count_words(char *str, char delim)<br>int _wrdlen(char *s, char delim)<br>char **strtow(char *str, char delim) | <ul><li>Description</li><ul><li>This program is our implementation of the strtok() function which extracts tokens from strings.</li>	<li>The  \_strtok()  function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to \_strtok() the string to be parsed should be specified in `str`.  In each subsequent call that should parse the same string, `str` must be NULL.</li><li>       The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings in delim in successive calls that parse the same string.</li><li>       Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte. If no  more tokens are found, \_strtok() returns `NULL`.</li></ul><li>Return value</li><ul>	<li>Returns string tokenized into words</li>  <li>The `_strtok()` functions return a pointer to the next token, or `NULL` if there are no more tokens.</li></ul></ul>
+
+
 
 File | Functions contained | Description and Return value |
 ---: | :--- | :---
