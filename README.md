@@ -29,16 +29,17 @@ File | Functions contained | Description and Return value |
 ---: | :--- | :---
 [shell.h](/shell.h)	|	n/a | <ul><li>Description</li>  <ul><li>header file for **ScarJo shell**</li></ul><li>Return value</li><ul><li>n/a</li></ul></ul> |
 [\_getline.c](/_getline.c)	|	int _getline(char *input, int size)<br>int exit_shell(char *line) | <ul><li>Description</li>	<ul><li>\_getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.</li></ul><li>Return value</li>	<ul><li>If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)</li>	<li>On  success,  \_getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.</li>	<li>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.</li></ul></ul>
-[\_strtok.c](/_strtok.c)		|	int count_words(char *str, char delim)<br>int _wrdlen(char *s, char delim)<br>char **strtow(char *str, char delim)
-[array_list.c](/array_list.c)	|	int arr_size(char **arr)<br>list_t *array_to_list(char **array)
-[environment.c](/environment.c)	|	char *_getenv(const char *name)<br>int _putenv(char *str)<br>int _setenv(const char *name, const char *value, int overwrite)<br>int _unsetenv(const char *name)<br>int delete_node(list_t **head, char *string)
+[\_strtok.c](/_strtok.c)		|	int count_words(char *str, char delim)<br>int _wrdlen(char *s, char delim)<br>char **strtow(char *str, char delim) | <ul><li><li>Description</li></li>	<ul><li>This program is our implementation of the strtok() function which extracts tokens from strings.</li>	<li>The  \_strtok()  function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to \_strtok() the string to be parsed should be specified in `str`.  In each subsequent call that should parse the same string, `str` must be NULL.</li><li>       The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings in delim in successive calls that parse the same string.</li><li>       Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte. If no  more tokens are found, \_strtok() returns `NULL`.</li></ul><li>Return value</li><ul>	<li>Returns string tokenized into words</li>  <li>The `_strtok()` functions return a pointer to the next token, or `NULL` if there are no more tokens.</li></ul></ul>
+[array_list.c](/array_list.c)	|	int arr_size(char **arr)<br>list_t *array_to_list(char **array) | <ul><li><li>Description</li></li>  <ul>	<li>This program builds a linked list of an array of pointers.</li></ul><li>Return value</li><ul><li>A pointer of type `list_t` to head</li></ul></ul>
+[environment.c](/environment.c)	|	`char *_getenv(const char *name)<br>int _putenv(char *str)<br>int _setenv(const char *name, const char *value, int overwrite)<br>int _unsetenv(const char *name)<br>int delete_node(list_t \*\*head, char *string)` | <ul><li><li>Description</li></li>	<ul><li>Contains helper functions that interact with environment variables.</li>	<li>  `*_getenv(const char *name)` searches environment list to find environment variable **name** and returns a pointer to the corresponding **value** string.</li>	<li>  `int _putenv(char *str)` changes or adds value of an environment variable</li>	<li>  `int _setenv(const char *name, const char *value, int overwrite)` change or add an environment variable</li>	<li>  `int _unsetenv(const char *name)` deletes the environment variable name from the environment</li>	<li>  `int delete_node(list_t \**head, char *string)` deletes the node with string of of a list_t</li></ul><li>Return value</li><ul><li>`*\_getenv(const char *name)` returns a pointer to the value in the environment, or NULL if there is no match</li>	<li>`\_putenv()` returns zero on success, or nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.</li>	<li>`\_setenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`\_unsetenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`delete_node()` returns 0 on success, or -1 on error</li></ul></ul>
+
+
 [lists.c](/lists.c)		|	size_t print_list(const list_t *h)<br>size_t list_len(const list_t *h)<br>list_t *add_node(list_t **head, const char *str)<br>list_t *add_node_end(list_t **head, const char *str)<br>void free_list(list_t *head)
 [more_strings.c](/more_strings.c)	| int _strcmp(char *s1, char *s2)<br>char *_strchr(const char *str, char c)<br>int len_to_char(char *str, char c)
 [prints.c](/prints.c)	| int _putchar(char c)<br>void _strprint(char *str)<br>void print_array(char **array)
 [strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
 
 #### File descriptions
-
 
 ##### File: [shell.h](/shell.h)
 - Description
@@ -287,5 +288,6 @@ Finally, include a section for the license of your project. For more information
 	<li>description</li>
 <li>Return value</li>
 	<li>return</li>
+
 
 
