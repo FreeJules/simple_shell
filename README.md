@@ -25,9 +25,10 @@ A description of your project follows. A good description is clear, short, and t
 
 #### Function Prototypes
 
-File | Functions contained
----: | :---
-[\_getline.c](/_getline.c)	|	int _getline(char *input, int size)<br>int exit_shell(char *line)
+File | Functions contained | Description and Return value |
+---: | :--- | :---
+[shell.h](/shell.h)	|	n/a | <ul><li>Description</li>  <ul><li>header file for **ScarJo shell**</li></ul><li>Return value</li><ul><li>n/a</li></ul></ul> |
+[\_getline.c](/_getline.c)	|	int _getline(char *input, int size)<br>int exit_shell(char *line) | <ul><li>Description</li>	<ul><li>\_getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.</li></ul><li>Return value</li>	<ul><li>If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)</li>	<li>On  success,  \_getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.</li>	<li>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.</li></ul></ul>
 [\_strtok.c](/_strtok.c)		|	int count_words(char *str, char delim)<br>int _wrdlen(char *s, char delim)<br>char **strtow(char *str, char delim)
 [array_list.c](/array_list.c)	|	int arr_size(char **arr)<br>list_t *array_to_list(char **array)
 [environment.c](/environment.c)	|	char *_getenv(const char *name)<br>int _putenv(char *str)<br>int _setenv(const char *name, const char *value, int overwrite)<br>int _unsetenv(const char *name)<br>int delete_node(list_t **head, char *string)
@@ -37,6 +38,7 @@ File | Functions contained
 [strings.c](/strings.c)	| int _strlen(const char *s)<br>int _strncmp(char *s1, const char *s2, int n)<br>char *_strcpy(char *dest, const char *src)<br>char *_strcat(char *dest, const char *src)<br>char *_strdup(char *str)
 
 #### File descriptions
+
 
 ##### File: [shell.h](/shell.h)
 - Description
@@ -138,7 +140,7 @@ File | Functions contained
 
 Function | Description | Return value
 ---: | :--- | :---
-[shell.h](/shell.h) | header file for **ScarJo shell** |
+[shell.h](/shell.h) | header file for **ScarJo shell** | 
 [\_getline.c](/_getline.c) | Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.| If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)<br>On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.<br>Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.|
 [\_strtok.c](/_strtok.c) | This program consists of three functions: count_words, \_wrdlen and strtow. | Returns string tokenized into words
 [array_list.c](/array_list.c) | program description |
@@ -200,3 +202,90 @@ Finally, include a section for the license of your project. For more information
 ### Resources
 * Readme template from GitHub https://guides.github.com/features/wikis/
 * Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
+
+
+<li>File: [\_strtok.c](/_strtok.c)</li>
+<li><li>Description</li></li>
+	<li>This program is our implementation of the strtok() function which extracts tokens from strings.</li>
+	<li>The  \_strtok()  function breaks a string into a sequence of zero or more nonempty tokens.  On the first call to \_strtok() the string to be parsed should be specified in `str`.  In each subsequent call that should parse the same string, `str` must be NULL.</li>
+<li>       The delim argument specifies a set of bytes that delimit the tokens in the parsed string.  The caller may specify different strings in delim in successive calls that parse the same string.</li>
+<li>       Each call to \_strtok() returns a pointer to a null-terminated string containing the next token.  This string does not include the delimiting byte. If no  more tokens are found, \_strtok() returns `NULL`.</li>
+<li>Return value</li>
+	<li>Returns string tokenized into words</li>
+	<li>The `_strtok()` functions return a pointer to the next token, or `NULL` if there are no more tokens.</li>
+
+<li>File: [array_list.c](/array_list.c)</li>
+<li><li>Description</li></li>
+	<li>This program builds a linked list of an array of pointers.</li>
+<li>Return value</li>
+	<li>A pointer of type `list_t` to head</li>
+
+<li>File: [environment.c](/environment.c)</li>
+<li><li>Description</li></li>
+	<li>Contains helper functions that interact with environment variables.</li>
+	<li>  `*_getenv(const char *name)` searches environment list to find environment variable **name** and returns a pointer to the corresponding **value** string.</li>
+	<li>  `int _putenv(char *str)` changes or adds value of an environment variable</li>
+	<li>  `int _setenv(const char *name, const char *value, int overwrite)` change or add an environment variable</li>
+	<li>  `int _unsetenv(const char *name)` deletes the environment variable name from the environment</li>
+	<li>  `int delete_node(list_t \**head, char *string)` deletes the node with string of of a list_t</li>
+<li>Return value</li>
+	<li>`*\_getenv(const char *name)` returns a pointer to the value in the environment, or NULL if there is no match</li>
+	<li>`\_putenv()` returns zero on success, or nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.</li>
+	<li>`\_setenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>
+	<li>`\_unsetenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>
+	<li>`delete_node()` returns 0 on success, or -1 on error</li>
+
+<li>File:[lists.c](/lists.c)</li>
+<li><li>Description</li></li>
+	<li>`print_list(const list_t *h)` prints all elements of a linked list pointed to by **\*h**</li>
+	<li>`size_t list_len(const list_t *h)` calculates the number of elements in a linked list pointed to by **\*h**</li>
+	<li>`list_t *add_node(list_t **head, const char *str)` adds node to the beginning of a linked list</li>
+	<li>`list_t *add_node_end(list_t **head, const char *str)` adds node to the end of a linked list</li>
+	<li>`void free_list(list_t *head)` frees a linked list of type</li>
+<li>Return value</li>
+	<li>`print_list()` prints elements of list to stdout</li>
+	<li>`size_t list_len()` length of list</li>
+	<li>`list_t *add_node()` address of the new element, NULL if failed</li>
+	<li>`list_t *add_node_end()` address of the new element, NULL if failed</li>
+	<li>`void free_list()` n/a</li>
+
+<li>File: [main.c](/main.c)</li>
+<li><li>Description</li></li>
+	<li>description</li>
+<li>Return value</li>
+	<li>return</li>
+
+<li>File: [more_strings.c](/more_strings.c)</li>
+<li><li>Description</li></li>
+	<li>int _strcmp(char *s1, char *s2)</li>
+	<li>char *_strchr(const char *str, char c)</li>
+	<li>int len_to_char(char *str, char c)</li>
+	<li>int _putchar(char c)</li>
+	<li>void _strprint(char *str)</li>
+	<li>void print_array(char **array)</li>
+<li>Return value</li>
+	<li>return</li>
+
+<li>File: [prints.c](/prints.c)</li>
+<li><li>Description</li></li>
+	<li>description</li>
+<li>Return value</li>
+	<li>return</li>
+
+<li>File: [strings.c](/strings.c)</li>
+<li><li>Description</li></li>
+	<li>_strlen(const char *s)</li>
+	<li>int _strncmp(char *s1, const char *s2, int n)</li>
+	<li>char *_strcpy(char *dest, const char *src)</li>
+	<li>char *_strcat(char *dest, const char *src)</li>
+	<li>char *_strdup(char *str)</li>
+<li>Return value</li>
+	<li>return</li>
+
+<li>File:</li>
+<li><li>Description</li></li>
+	<li>description</li>
+<li>Return value</li>
+	<li>return</li>
+
+
