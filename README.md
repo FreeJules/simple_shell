@@ -1,5 +1,5 @@
-# ScarJo
-ScarJo is a simple shell created as an end of term project for @holbertonschool.
+# Scarjo
+Scarjo is a simple shell created as an end of term project for @holbertonschool.
 
 ### Table of Contents
 * [**Project Details**](#project-details)
@@ -46,10 +46,10 @@ File | Functions contained
 
 ##### File: [\_getline.c](/_getline.c)
 - Description
-	- Reads _getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
+	- \_getline() uses _strprint to  reads an entire line from standard input, storing the address of the buffer containing the text into *lineptr.  The buffer is null-terminated and includes the newline character, if one was found.
 - Return value
 	- If *input is NULL, then \_getline() will allocate a buffer for storing the line, which should be freed by the user program.  (In this case, the value in \*n is ignored.)
-	- On  success,  getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.
+	- On  success,  \_getline() return the number of characters read, including the delimiter character, but  not including  the terminating null byte ('\0').  This value can be used to handle embedded null bytes in the line read.
 	- Both functions return -1 on failure to read a line  (including end-of-file condition).  In the event of an error, errno is set to indicate the cause.
 
 ##### File: [\_strtok.c](/_strtok.c)
@@ -71,34 +71,31 @@ File | Functions contained
 ##### File: [environment.c](/environment.c)
 - Description
 	- Contains helper functions that interact with environment variables.
-	  - `*_getenv(const char *name)` - searches environment list to find environment variable _name_ and returns a pointer to the corresponding _value_ string.
-	  - `int _putenv(char *str)` - changes or adds an environment variable
-		- The putenv() function adds or changes the value of environment variables.  The argument string is of the form name=value.  If name does not already exist in the environment, then string is added  to the environment.  If name does exist, then the value of name in the environment is changed to  value.   The  string pointed  to  by  string  becomes  part  of the environment, so altering the string changes the environment.
+	  - `*_getenv(const char *name)` - searches environment list to find environment variable **name** and returns a pointer to the corresponding **value** string.
+	  - `int _putenv(char *str)` - changes or adds value of an environment variable
 	  - `int _setenv(const char *name, const char *value, int overwrite)` - change or add an environment variable
-	  - `int \_unsetenv(const char *name)`
-	  - `int delete_node(list\_t **head, char *string)`
+	  - `int _unsetenv(const char *name)` - deletes the environment variable name from the environment
+	  - `int delete_node(list_t \**head, char *string)` - deletes the node with string of of a list_t
 - Return value
-	- `\*\_getenv(const char *name)` - returns a pointer to the value in the environment, or NULL if there is no match
-	- `\_putenv()` - returns zero on success, or  nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.
+	- `*\_getenv(const char *name)` - returns a pointer to the value in the environment, or NULL if there is no match
+	- `\_putenv()` - returns zero on success, or nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.
 	- `\_setenv()` - returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error
-	- `\_unsetenv()` - 
-	- `delete_node()` - 
-
-##### File: [generate-authors.sh](/generate-authors.sh)
-- Description
-	- This shell script is a simplified version of Docker's generate-authors script.
-- Return value
-	- returns
+	- `\_unsetenv()` - returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error
+	- `delete_node()` - returns 0 on success, or -1 on error
 
 ##### File:[lists.c](/lists.c)
 - Description
-	- `print_list(const list_t *h)`
-	- `size_t list_len(const list_t *h)`
-	- `list_t *add_node(list_t **head, const char *str)`
-	- `list_t *add_node_end(list_t **head, const char *str)`
-	- `void free_list(list_t *head)`
+	- `print_list(const list_t *h)` - prints all elements of a linked list pointed to by **\*h**
+	- `size_t list_len(const list_t *h)` - calculates the number of elements in a linked list pointed to by **\*h**
+	- `list_t *add_node(list_t **head, const char *str)` - adds node to the beginning of a linked list
+	- `list_t *add_node_end(list_t **head, const char *str)` - adds node to the end of a linked list
+	- `void free_list(list_t *head)` - frees a linked list of type
 - Return value
-	- return
+	- `print_list()` - prints elements of list to stdout
+	- `size_t list_len()` - length of list
+	- `list_t *add_node()` - address of the new element, NULL if failed
+	- `list_t *add_node_end()` - address of the new element, NULL if failed
+	- `void free_list()` - n/a
 
 ##### File: [main.c](/main.c)
 - Description
