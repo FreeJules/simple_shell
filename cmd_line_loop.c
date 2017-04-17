@@ -32,10 +32,10 @@ int cmd_line_loop(char *buffer, char *line)
 		line = _memcpy(line, buffer, new_len);
 		if (line[0] != '\0')
 		{
-		/* check if line = exit */
-		if (exit_shell(line))
-			break;
-		run_command(line);
+			/* check if line = exit */
+			if (exit_shell(line))
+				break;
+			run_command(line);
 		}
 	}
 	free(line);
