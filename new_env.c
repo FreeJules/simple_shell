@@ -8,14 +8,18 @@
 char *_getenv(char *name, list_t **env_head)
 {
 	list_t *tmp;
+	int len, i;
 
 	tmp = *env_head;
+	len = list_len(tmp);
 	if (!env_head || !tmp || !name)
 		return (NULL);
-	while (tmp->next)
+	i = 0;
+	while (i < len)
 	{
 		if (_strncmp(tmp->str, name, _strlen(name)) == 0)
 			return (tmp->str);
+		i++;
 		tmp = tmp->next;
 	}
 	return (NULL);
@@ -33,27 +37,28 @@ int _setenv(char *name, char *value, list_t **env_head)
 {
 	char *ptr, *new_ptr;
 	list_t *ret_ptr;
-	list_t *tmp;
+/*	list_t *tmp;
 
 	tmp = *env_head;
-	new_ptr = var_str(name, value);
+*/	new_ptr = var_str(name, value);
 	if (new_ptr == NULL)
 	{
 		perror(ENOMEM);
 		return (1);
 	}
 	/* use _getenv(name) to get a pointer to string of variable */
-	ptr = _getenv(name, &tmp);
+	ptr = _getenv(name, env_head);
 	/* if variable not found add it */
 	if (ptr == NULL)
 	{
-		ret_ptr = add_node_end(&tmp, new_ptr);
+		ret_ptr = add_node_end(env_head, new_ptr);
 		if (ret_ptr == NULL)
 		{
 			perror(ENOMEM);
 			return (1);
 		}
-		*env_head = ret_ptr;
+//		print_list(*env_head);
+//		env_head = &ret_ptr;
 /* Error = ENOMEM if insufficient memory to add new var to the environment. */
 		free(new_ptr);
 		return (0);

@@ -8,44 +8,44 @@
  */
 int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 {
-	int chars_read, old_len, new_len, retval_bi, retval, ec1, ec2;
+	int chars_read, old_len, retval = 0, ec1, ec2;
 	char **line_tok;
-	list_t *tmp;
+	list_t *tmp = *env_head;
 
-	tmp = *env_head;
-	retval = 0;
 	while (1)
 	{
 		clear_buffer(buffer);
 		chars_read = _getline(buffer, BUFF_SIZE);
 		if (chars_read == -1)  /* EOF  */
 			break;
-		new_len = chars_read + 1;
 		if (line == NULL)
 			old_len = 0;
 		else
 			old_len = _strlen(line);
-		line = _realloc(line, old_len, new_len);
+		line = _realloc(line, old_len, ++chars_read); /* ++ for \0  */
 		if (line == NULL)
 		{
 			perror("Insuficient memory: unable to relocate line");
 			retval = 1;
 			break;
 		}
-		line = _memcpy(line, buffer, new_len);
+		line = _memcpy(line, buffer, chars_read);
 		if (line[0] != '\0')
 		{
 			line_tok = strtow(line, ' '); /* tokenize input line */
-			retval_bi = built_ins(line_tok, &tmp); /* if built-in */
-			retval = retval_bi;
+			retval = built_ins(line_tok, &tmp); /* if built-in */
 			ec1 = exit_shell(line_tok[0]); /*exit check 1 */
 			ec2 = arr_size(line_tok) < 3; /* exit check 2 */
 			if (ec1 && ec2 && retval != -1) /* if exit check */
+			{
+				free_array(line_tok);
 				break;
-			if (retval_bi == -1) /*not builtin,check if binary exe*/
-				retval = run_command(line_tok, &tmp);
+			}
+			if (retval == -1) /*not builtin,check if binary exe*/
+				retval = run_command(line_tok, &tmp, buffer);
+			free_array(line_tok);
 		}
 	}
-	free_array(line_tok);
+	free(line);
 	return (retval);
 }
