@@ -38,20 +38,12 @@ File Functions contained | Description and Return value |
 
 ##### File: [main.c](/main.c)
 - Description
-	- description
+	- This program 
 - Return value
 	- return
 
 ##### File: [more_strings.c](/more_strings.c)
-- Description
-	- int _strcmp(char *s1, char *s2)
-	- char *_strchr(const char *str, char c)
-	- int len_to_char(char *str, char c)
-	- int _putchar(char c)
-	- void _strprint(char *str)
-	- void print_array(char **array)
-- Return value
-	- return
+<ul><li>Description</li><ul><li>`int _strcmp(char *s1, char *s2)` - compare strings **s1** and **s2**</li><li>char *_strchr(const char *str, char c) - locate character in a string</li><li>`int len_to_char(char *str, char c)` - calculate length of string **str** up to char **c**</li><\ul><li>Return value</li><ul><li>`int _strcmp(char *s1, char *s2)` - return an integer less than, equal to, or greater than zero if **s1** is found to be less than, to match, or to be greater than **s2**</li><li>char *_strchr(const char *str, char c) - a pointer to the matched character or NULL if the character is not found. </li><li>int len_to_char(char *str, char c) - length of string before char, 0 if char not found</li></ul>
 
 ##### File: [prints.c](/prints.c)
 - Description
@@ -66,12 +58,6 @@ File Functions contained | Description and Return value |
 	- char *_strcpy(char *dest, const char *src)
 	- char *_strcat(char *dest, const char *src)
 	- char *_strdup(char *str)
-- Return value
-	- return
-
-##### File:
-- Description
-	- description
 - Return value
 	- return
 
@@ -104,11 +90,6 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 
 ### Usage
 *The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.*
-
-Description | Screenshot
-:--- | :---
- |
- |
 
 ## Contributing
 Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for (setting guidelines for repository contributors)[https://help.github.com/articles/setting-guidelines-for-repository-contributors/].
