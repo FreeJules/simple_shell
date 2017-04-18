@@ -49,14 +49,7 @@ File Functions contained | Description and Return value |
 <ul><li>Description</li><ul><li>`_putchar` - writes the character **c** to stdout</li><li>_strprint - prints a string</li><li>print_array - Prints an array of strings</li></ul><li>Return value</li><ul><li>Return: On success 1. On error, -1 is returned, and errno is set appropriately.</li></ul></ul>
 
 ##### File: [strings.c](/strings.c)
-- Description
-	- _strlen(const char *s)
-	- int _strncmp(char *s1, const char *s2, int n)
-	- char *_strcpy(char *dest, const char *src)
-	- char *_strcat(char *dest, const char *src)
-	- char *_strdup(char *str)
-- Return value
-	- return
+<ul><li>Description</li><ul><li>`_strlen(const char *s)` returns the length of a string</li><li>int _strncmp(char *s1, const char *s2, int n) - compares two strings for n amount of chars</li><li>char *_strcpy(char *dest, const char *src) - copies the string with \0 to the buffer</li><li>char *_strcat(char *dest, const char *src) - appends the src string to the dest string</li><li>char *_strdup(char *str) - returns a pointer to a newly allocated space in memory, which contains a copy of the string given as a parameter </li></ul><li>Return value</li><ul><li>_strlen(const char *s) - Return: 0 on success</li><li>int _strncmp(char *s1, const char *s2, int n) - Return: 0 if identical</li><li>char *_strcpy(char *dest, const char *src) - Return: the pointer to dest</li><li>char *_strcat(char *dest, const char *src) - pointer to resulting string dest</li><li>char *_strdup(char *str) - pointer to new string or NULL if str = NULL</li></ul></ul>
 
 ### Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
