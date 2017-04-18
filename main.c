@@ -17,8 +17,8 @@ int main(void)
 	env_head = array_to_list(environ);
 	/* call cmd_line_loop */
 	ret_val = cmd_line_loop(buffer, line, &env_head);
+
 	free_list(env_head);
-	free(line);
 	free(buffer);
 	return (ret_val);
 }

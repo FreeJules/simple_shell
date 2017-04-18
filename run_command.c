@@ -48,31 +48,24 @@ char *cmd_in_path(char *str, list_t **env_head)
 
 	tmp = *env_head;
 	path_dirs = path_dirs_array(&tmp);
-	cmd = NULL;
+	if (path_dirs == NULL)
+	{
+		perror(ENOMEM);
+		return (NULL);
+	}
 	for (i = 0; path_dirs[i] != NULL; i++)
 	{
 		if (access(str, F_OK) == 0)
 			break;
-		if (cmd == NULL)
-			cmdl = 0;
-		else
-			cmdl = _strlen(path_dirs[i]);
+		cmd = _strdup(path_dirs[i]);
+		cmdl = _strlen(cmd);
 		strl = _strlen(str);
 		cmd = _realloc(cmd, cmdl, cmdl + strl + 2);
 		cmd = _strcpy(cmd, path_dirs[i]);
 		cmd = _strcat(cmd, "/");
 		cmd = _strcat(cmd, str);
 		if (access(cmd, F_OK) == 0)
-		{
-			free(str);
-			str = cmd;
-			break;
-		}
-	}
-	if (path_dirs[i] == NULL)
-	{
-		perror(str);
-		return (NULL);
+			return (cmd);
 	}
 	free_array(path_dirs);
 	return (str);
@@ -81,9 +74,10 @@ char *cmd_in_path(char *str, list_t **env_head)
  * run_command - runs the command typed into shell prompt
  * @line_tok: tokenized input line
  * @env_head: pointer to environ list
+ * @buffer: buffer so it can be freed on exit
  * Return: Always 0 on success, 1 on error
  */
-int run_command(char **line_tok, list_t **env_head)
+int run_command(char **line_tok, list_t **env_head, char *buffer)
 {
 	pid_t child_pid;
 	int status;
@@ -113,8 +107,10 @@ int run_command(char **line_tok, list_t **env_head)
 		if (execve(command, line_tok, env_array) == -1)
 		{
 			perror("execve failed");
+			free(buffer);
 			free(env_array);
-			return (1);
+			free_array(line_tok);
+			exit(1);
 		}
 	}
 	else

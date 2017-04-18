@@ -56,7 +56,9 @@ list_t *add_node(list_t **head, char *str)
 	new->len = _strlen(str);
 	new->next = *head;
 	*head = new;
-	return (new);
+	print_list(new);
+	printf("%s\n", new->str);
+	return (*head);
 }
 /**
  * add_node_end - check the code for Holberton School students.
@@ -78,9 +80,10 @@ list_t *add_node_end(list_t **head, char *str)
 	new->len = _strlen(str);
 	new->next = NULL;
 	if (*head == NULL)
-		*head = new;
-	else
 	{
+		*head = new;
+		return (new);
+	}
 		tail = *head;
 		while (1)
 		{
@@ -91,7 +94,6 @@ list_t *add_node_end(list_t **head, char *str)
 			}
 			tail = tail->next;
 		}
-	}
 	return (new);
 }
 /**

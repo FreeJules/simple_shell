@@ -63,6 +63,7 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strchr(char *str, char c);
 int len_to_char(char *str, char c);
+int _atoi(char *s);
 /* _strtok.c */
 int count_words(char *str, char delim);
 int _wrdlen(char *s, char delim);
@@ -89,14 +90,11 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head);
 /* run_command */
 char **path_dirs_array(list_t **env_head);
 char *cmd_in_path(char *str, list_t **env_head);
-int run_command(char **line, list_t **env_head);
+int run_command(char **line, list_t **env_head, char *buffer);
 /* built_ins.c */
 int built_ins(char **input, list_t **env_head);
 int exit_bi(char **line);
 int print_env(char **line, list_t **env_head);
 int set_env(char **line, list_t **env_head);
 int unset_env(char **line, list_t **env_head);
-/* _atoi.c */
-int _if_not_number(char *s);
-int _atoi(char *s);
 #endif
