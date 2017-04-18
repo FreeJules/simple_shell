@@ -43,7 +43,7 @@ char *cmd_in_path(char *str, list_t **env_head)
 {
 	char **path_dirs;
 	char *cmd;
-	int i, cmdl, strl;
+	int i, cmdl, strl, j;
 	list_t *tmp;
 
 	tmp = *env_head;
@@ -55,8 +55,11 @@ char *cmd_in_path(char *str, list_t **env_head)
 	}
 	for (i = 0; path_dirs[i] != NULL; i++)
 	{
-		if (access(str, F_OK) == 0)
-			break;
+		for (j = 0; j < _strlen(str); j++)
+		{
+			if (str[j] == '/' && access(str, F_OK) == 0)
+				break;
+		}
 		cmd = _strdup(path_dirs[i]);
 		cmdl = _strlen(cmd);
 		strl = _strlen(str);

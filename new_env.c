@@ -57,8 +57,6 @@ int _setenv(char *name, char *value, list_t **env_head)
 			perror(ENOMEM);
 			return (1);
 		}
-//		print_list(*env_head);
-//		env_head = &ret_ptr;
 /* Error = ENOMEM if insufficient memory to add new var to the environment. */
 		free(new_ptr);
 		return (0);
