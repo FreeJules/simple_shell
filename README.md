@@ -46,10 +46,7 @@ File Functions contained | Description and Return value |
 <ul><li>Description</li><ul><li>`int _strcmp(char *s1, char *s2)` - compare strings **s1** and **s2**</li><li>char *_strchr(const char *str, char c) - locate character in a string</li><li>`int len_to_char(char *str, char c)` - calculate length of string **str** up to char **c**</li><\ul><li>Return value</li><ul><li>`int _strcmp(char *s1, char *s2)` - return an integer less than, equal to, or greater than zero if **s1** is found to be less than, to match, or to be greater than **s2**</li><li>char *_strchr(const char *str, char c) - a pointer to the matched character or NULL if the character is not found. </li><li>int len_to_char(char *str, char c) - length of string before char, 0 if char not found</li></ul>
 
 ##### File: [prints.c](/prints.c)
-- Description
-	- description
-- Return value
-	- return
+<ul><li>Description</li><ul><li>`_putchar` - writes the character **c** to stdout</li><li>_strprint - prints a string</li><li>print_array - Prints an array of strings</li></ul><li>Return value</li><ul><li>Return: On success 1. On error, -1 is returned, and errno is set appropriately.</li></ul></ul>
 
 ##### File: [strings.c](/strings.c)
 - Description
