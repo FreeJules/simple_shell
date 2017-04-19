@@ -35,8 +35,6 @@ list_t *add_node(list_t **head, char *str)
 	new->len = _strlen(str);
 	new->next = *head;
 	*head = new;
-	print_list(new);
-	printf("%s\n", new->str);
 	return (*head);
 }
 /**

@@ -54,7 +54,8 @@ char *cmd_in_path(char *str, list_t **env_head)
 	}
 	if ((str[0] == '/' || str[0] == '.') && str[j] == '\0')
 	{
-		perror(str);
+		_strprint(str);
+		_strprint(": not found\n");
 		return (NULL);
 	}
 	tmp = *env_head;
