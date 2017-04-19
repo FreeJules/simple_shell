@@ -14,7 +14,7 @@ int _getline(char *input, int size)
 
 	if (fstat(STDIN_FILENO, &sb) == -1)
 	{
-		perror("fstat: failed");
+		perror("fstat");
 		exit(-1);
 	}
 	if ((sb.st_mode & S_IFMT) != S_IFIFO)

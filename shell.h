@@ -90,7 +90,7 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head);
 /* run_command */
 char **path_dirs_array(list_t **env_head);
 char *cmd_in_path(char *str, list_t **env_head);
-int run_command(char **line, list_t **env_head, char *buffer);
+int run_command(char **line, list_t **env_head);
 /* built_ins.c */
 int built_ins(char **input, list_t **env_head);
 int exit_bi(char **line);

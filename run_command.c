@@ -43,9 +43,20 @@ char *cmd_in_path(char *str, list_t **env_head)
 {
 	char **path_dirs;
 	char *cmd;
-	int i, cmdl, strl;
+	int i, j, cmdl, strl;
 	list_t *tmp;
 
+	for (j = 0; str[j] != '\0'; j++)
+	{
+		if (str[j] == '/' && str[j + 1] != '\0' && str[j + 1] != '/' &&
+		    access(str, F_OK | X_OK) == 0)
+			return (str);
+	}
+	if ((str[0] == '/' || str[0] == '.') && str[j] == '\0')
+	{
+		perror(str);
+		return (NULL);
+	}
 	tmp = *env_head;
 	path_dirs = path_dirs_array(&tmp);
 	if (path_dirs == NULL)
@@ -55,9 +66,6 @@ char *cmd_in_path(char *str, list_t **env_head)
 	}
 	for (i = 0; path_dirs[i] != NULL; i++)
 	{
-		if (str[i] == '/' && str[i] != '\0' &&
-		    access(str, F_OK | X_OK) == 0)
-			break;
 		cmd = _strdup(path_dirs[i]);
 		cmdl = _strlen(cmd);
 		strl = _strlen(str);
@@ -66,7 +74,10 @@ char *cmd_in_path(char *str, list_t **env_head)
 		cmd = _strcat(cmd, "/");
 		cmd = _strcat(cmd, str);
 		if (access(cmd, F_OK) == 0)
+		{
+			free_array(path_dirs);
 			return (cmd);
+		}
 	}
 	free_array(path_dirs);
 	return (str);
@@ -75,10 +86,9 @@ char *cmd_in_path(char *str, list_t **env_head)
  * run_command - runs the command typed into shell prompt
  * @line_tok: tokenized input line
  * @env_head: pointer to environ list
- * @buffer: buffer so it can be freed on exit
  * Return: Always 0 on success, 1 on error
  */
-int run_command(char **line_tok, list_t **env_head, char *buffer)
+int run_command(char **line_tok, list_t **env_head)
 {
 	pid_t child_pid;
 	int status;
@@ -104,13 +114,12 @@ int run_command(char **line_tok, list_t **env_head, char *buffer)
 	{
 		/* find command (first token) in the PATH */
 		command = cmd_in_path(line_tok[0], &tmp);
+		if (command == NULL)
+			exit(1);
 		/* run execve (abs path, rest of the tokens, env) */
 		if (execve(command, line_tok, env_array) == -1)
 		{
-			perror("execve failed");
-			free(buffer);
-			free(env_array);
-			free_array(line_tok);
+			perror("execve");
 			exit(1);
 		}
 	}

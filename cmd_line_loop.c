@@ -42,7 +42,7 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 				break;
 			}
 			if (retval == -1) /*not builtin,check if binary exe*/
-				retval = run_command(line_tok, &tmp, buffer);
+				retval = run_command(line_tok, &tmp);
 			free_array(line_tok);
 		}
 	}
