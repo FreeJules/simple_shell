@@ -60,10 +60,13 @@ File Functions contained | Description and Return value |
 ## Getting Started
 To use this shell first clone https://github.com/FreeJules/simple_shell.git
 ### Installation
-Clone this repository to your local machine by Your shell will be compiled this way:
+Clone this repository to your local machine by 
+
+On your machine compile with the following tags
 ```C
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
+![hsh-compilation](https://cloud.githubusercontent.com/assets/23224088/25164495/2baef358-2486-11e7-8d66-3ed61adc1004.gif)
 
 *Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.*
 
