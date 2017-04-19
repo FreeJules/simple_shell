@@ -1,26 +1,5 @@
 #include "shell.h"
 /**
- * print_list - prints all the elements of a list_t list
- * @h: linked list
- * Return: number of elements
- */
-size_t print_list(list_t *h)
-{
-	size_t len;
-
-	len = 0;
-	if (h == NULL)
-		return (0);
-	while (h != NULL)
-	{
-		_strprint(h->str);
-		_putchar('\n');
-		h = h->next;
-		len++;
-	}
-	return (len);
-}
-/**
  * list_len - returns the number of elements in a linked list_t list
  * @h: linked List
  * Return: number of elements
@@ -114,4 +93,23 @@ void free_list(list_t *head)
 		free(tmp->str);
 		free(tmp);
 	}
+}
+/**
+ * get_node - returns the node with string str
+ * @head: pointer to first node
+ * @str: string to search for
+ * Return: n-th node, if the node does not exist, return NULL
+ */
+list_t *get_node(list_t **head, char *str)
+{
+	list_t *tmp;
+
+	tmp = *head;
+	while (head && tmp)
+	{
+		if (_strcmp(tmp->str, str) == 0 && tmp)
+			return (tmp);
+		tmp = tmp->next;
+	}
+	return (NULL);
 }

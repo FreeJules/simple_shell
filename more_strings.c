@@ -35,9 +35,7 @@ char *_strchr(char *str, char c)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] != c)
-			i++;
-		else
+		if (str[i] == c)
 			return ((char *)(str + i));
 	}
 	return (NULL);

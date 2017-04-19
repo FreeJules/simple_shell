@@ -44,15 +44,16 @@ typedef struct list_s
 } list_t;
 extern char **environ;
 /* lists.c */
-size_t print_list(list_t *h);
 size_t list_len(list_t *h);
 list_t *add_node(list_t **head, char *str);
 list_t *add_node_end(list_t **head, char *str);
 void free_list(list_t *head);
+list_t *get_node(list_t **head, char *str);
 /* prints.c */
 int _putchar(char c);
 void _strprint(char *str);
 void print_array(char **array);
+size_t print_list(list_t *h);
 /* strings.c */
 int _strlen(char *s);
 int _strncmp(char *s1, char *s2, int n);

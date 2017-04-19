@@ -38,3 +38,24 @@ void print_array(char **array)
 		_putchar('\n');
 	}
 }
+/**
+ * print_list - prints all the elements of a list_t list
+ * @h: linked list
+ * Return: number of elements
+ */
+size_t print_list(list_t *h)
+{
+	size_t len;
+
+	len = 0;
+	if (h == NULL)
+		return (0);
+	while (h != NULL)
+	{
+		_strprint(h->str);
+		_putchar('\n');
+		h = h->next;
+		len++;
+	}
+	return (len);
+}

@@ -10,8 +10,9 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 {
 	int chars_read, old_len, retval = 0;
 	char **line_tok;
-	list_t *tmp = *env_head;
+	list_t *tmp;
 
+	tmp = *env_head;
 	while (1)
 	{
 		clear_buffer(buffer);
@@ -25,7 +26,7 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 		line = _realloc(line, old_len, ++chars_read); /* ++ for \0  */
 		if (line == NULL)
 		{
-			perror("Insuficient memory: unable to relocate line");
+			perror("ENOMEM");
 			retval = 1;
 			break;
 		}
@@ -34,7 +35,7 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 		{
 			line_tok = strtow(line, ' '); /* tokenize input line */
 			retval = built_ins(line_tok, &tmp); /* if built-in */
-			if (exit_shell(line_tok) && retval != -1) /* if exit check */
+			if (exit_shell(line_tok) && retval != -1) /* if exit */
 			{
 				free_array(line_tok);
 				break;

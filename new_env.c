@@ -61,13 +61,9 @@ int _setenv(char *name, char *value, list_t **env_head)
 		return (0);
 	}
 	/* replace it with new value */
-	free(ptr);
-	ptr = _strdup(new_ptr);
-	if (NULL)
-	{
-		perror(ENOMEM);
-		return (1);
-	}
+	ret_ptr = get_node(env_head, ptr);
+	free(ret_ptr->str);
+	ret_ptr->str = new_ptr;
 	return (0);
 }
 /**
