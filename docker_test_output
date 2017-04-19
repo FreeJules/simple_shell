@@ -1,0 +1,303 @@
+Cloning into 'src'...
+remote: Counting objects: 458, done.[K
+remote: Compressing objects:   2% (1/44)   [Kremote: Compressing objects:   4% (2/44)   [Kremote: Compressing objects:   6% (3/44)   [Kremote: Compressing objects:   9% (4/44)   [Kremote: Compressing objects:  11% (5/44)   [Kremote: Compressing objects:  13% (6/44)   [Kremote: Compressing objects:  15% (7/44)   [Kremote: Compressing objects:  18% (8/44)   [Kremote: Compressing objects:  20% (9/44)   [Kremote: Compressing objects:  22% (10/44)   [Kremote: Compressing objects:  25% (11/44)   [Kremote: Compressing objects:  27% (12/44)   [Kremote: Compressing objects:  29% (13/44)   [Kremote: Compressing objects:  31% (14/44)   [Kremote: Compressing objects:  34% (15/44)   [Kremote: Compressing objects:  36% (16/44)   [Kremote: Compressing objects:  38% (17/44)   [Kremote: Compressing objects:  40% (18/44)   [Kremote: Compressing objects:  43% (19/44)   [Kremote: Compressing objects:  45% (20/44)   [Kremote: Compressing objects:  47% (21/44)   [Kremote: Compressing objects:  50% (22/44)   [Kremote: Compressing objects:  52% (23/44)   [Kremote: Compressing objects:  54% (24/44)   [Kremote: Compressing objects:  56% (25/44)   [Kremote: Compressing objects:  59% (26/44)   [Kremote: Compressing objects:  61% (27/44)   [Kremote: Compressing objects:  63% (28/44)   [Kremote: Compressing objects:  65% (29/44)   [Kremote: Compressing objects:  68% (30/44)   [Kremote: Compressing objects:  70% (31/44)   [Kremote: Compressing objects:  72% (32/44)   [Kremote: Compressing objects:  75% (33/44)   [Kremote: Compressing objects:  77% (34/44)   [Kremote: Compressing objects:  79% (35/44)   [Kremote: Compressing objects:  81% (36/44)   [Kremote: Compressing objects:  84% (37/44)   [Kremote: Compressing objects:  86% (38/44)   [Kremote: Compressing objects:  88% (39/44)   [Kremote: Compressing objects:  90% (40/44)   [Kremote: Compressing objects:  93% (41/44)   [Kremote: Compressing objects:  95% (42/44)   [Kremote: Compressing objects:  97% (43/44)   [Kremote: Compressing objects: 100% (44/44)   [Kremote: Compressing objects: 100% (44/44), done.[K
+Receiving objects:   0% (1/458)   Receiving objects:   1% (5/458)   Receiving objects:   2% (10/458)   Receiving objects:   3% (14/458)   Receiving objects:   4% (19/458)   Receiving objects:   5% (23/458)   Receiving objects:   6% (28/458)   Receiving objects:   7% (33/458)   Receiving objects:   8% (37/458)   Receiving objects:   9% (42/458)   Receiving objects:  10% (46/458)   Receiving objects:  11% (51/458)   Receiving objects:  12% (55/458)   Receiving objects:  13% (60/458)   Receiving objects:  14% (65/458)   Receiving objects:  15% (69/458)   Receiving objects:  16% (74/458)   Receiving objects:  17% (78/458)   Receiving objects:  18% (83/458)   Receiving objects:  19% (88/458)   Receiving objects:  20% (92/458)   Receiving objects:  21% (97/458)   Receiving objects:  22% (101/458)   Receiving objects:  23% (106/458)   Receiving objects:  24% (110/458)   Receiving objects:  25% (115/458)   Receiving objects:  26% (120/458)   Receiving objects:  27% (124/458)   Receiving objects:  28% (129/458)   Receiving objects:  29% (133/458)   Receiving objects:  30% (138/458)   Receiving objects:  31% (142/458)   Receiving objects:  32% (147/458)   Receiving objects:  33% (152/458)   Receiving objects:  34% (156/458)   Receiving objects:  35% (161/458)   Receiving objects:  36% (165/458)   Receiving objects:  37% (170/458)   Receiving objects:  38% (175/458)   Receiving objects:  39% (179/458)   Receiving objects:  40% (184/458)   Receiving objects:  41% (188/458)   Receiving objects:  42% (193/458)   Receiving objects:  43% (197/458)   Receiving objects:  44% (202/458)   Receiving objects:  45% (207/458)   Receiving objects:  46% (211/458)   Receiving objects:  47% (216/458)   Receiving objects:  48% (220/458)   Receiving objects:  49% (225/458)   Receiving objects:  50% (229/458)   Receiving objects:  51% (234/458)   Receiving objects:  52% (239/458)   Receiving objects:  53% (243/458)   Receiving objects:  54% (248/458)   Receiving objects:  55% (252/458)   Receiving objects:  56% (257/458)   Receiving objects:  57% (262/458)   Receiving objects:  58% (266/458)   Receiving objects:  59% (271/458)   Receiving objects:  60% (275/458)   Receiving objects:  61% (280/458)   Receiving objects:  62% (284/458)   Receiving objects:  63% (289/458)   Receiving objects:  64% (294/458)   Receiving objects:  65% (298/458)   Receiving objects:  66% (303/458)   Receiving objects:  67% (307/458)   Receiving objects:  68% (312/458)   Receiving objects:  69% (317/458)   Receiving objects:  70% (321/458)   Receiving objects:  71% (326/458)   Receiving objects:  72% (330/458)   Receiving objects:  73% (335/458)   Receiving objects:  74% (339/458)   Receiving objects:  75% (344/458)   Receiving objects:  76% (349/458)   Receiving objects:  77% (353/458)   Receiving objects:  78% (358/458)   Receiving objects:  79% (362/458)   Receiving objects:  80% (367/458)   Receiving objects:  81% (371/458)   Receiving objects:  82% (376/458)   Receiving objects:  83% (381/458)   Receiving objects:  84% (385/458)   Receiving objects:  85% (390/458)   Receiving objects:  86% (394/458)   Receiving objects:  87% (399/458)   Receiving objects:  88% (404/458)   Receiving objects:  89% (408/458)   Receiving objects:  90% (413/458)   Receiving objects:  91% (417/458)   Receiving objects:  92% (422/458)   Receiving objects:  93% (426/458)   remote: Total 458 (delta 21), reused 0 (delta 0), pack-reused 414[K
+Receiving objects:  94% (431/458)   Receiving objects:  95% (436/458)   Receiving objects:  96% (440/458)   Receiving objects:  97% (445/458)   Receiving objects:  98% (449/458)   Receiving objects:  99% (454/458)   Receiving objects: 100% (458/458)   Receiving objects: 100% (458/458), 106.14 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/258)   Resolving deltas:   1% (4/258)   Resolving deltas:   8% (23/258)   Resolving deltas:   9% (24/258)   Resolving deltas:  33% (87/258)   Resolving deltas:  36% (93/258)   Resolving deltas:  37% (97/258)   Resolving deltas:  38% (100/258)   Resolving deltas:  39% (101/258)   Resolving deltas:  40% (104/258)   Resolving deltas:  42% (109/258)   Resolving deltas:  43% (111/258)   Resolving deltas:  44% (114/258)   Resolving deltas:  45% (118/258)   Resolving deltas:  48% (125/258)   Resolving deltas:  51% (133/258)   Resolving deltas:  77% (200/258)   Resolving deltas:  79% (205/258)   Resolving deltas:  80% (207/258)   Resolving deltas:  81% (209/258)   Resolving deltas:  82% (214/258)   Resolving deltas:  83% (216/258)   Resolving deltas:  84% (217/258)   Resolving deltas:  85% (220/258)   Resolving deltas:  89% (232/258)   Resolving deltas:  90% (234/258)   Resolving deltas:  91% (237/258)   Resolving deltas:  95% (247/258)   Resolving deltas:  97% (251/258)   Resolving deltas:  98% (253/258)   Resolving deltas:  99% (256/258)   Resolving deltas: 100% (258/258)   Resolving deltas: 100% (258/258), done.
+Checking connectivity... done.
+Cloning into 'shellfish'...
+remote: Counting objects: 501, done.[K
+remote: Compressing objects:   0% (1/115)   [Kremote: Compressing objects:   1% (2/115)   [Kremote: Compressing objects:   2% (3/115)   [Kremote: Compressing objects:   3% (4/115)   [Kremote: Compressing objects:   4% (5/115)   [Kremote: Compressing objects:   5% (6/115)   [Kremote: Compressing objects:   6% (7/115)   [Kremote: Compressing objects:   7% (9/115)   [Kremote: Compressing objects:   8% (10/115)   [Kremote: Compressing objects:   9% (11/115)   [Kremote: Compressing objects:  10% (12/115)   [Kremote: Compressing objects:  11% (13/115)   [Kremote: Compressing objects:  12% (14/115)   [Kremote: Compressing objects:  13% (15/115)   [Kremote: Compressing objects:  14% (17/115)   [Kremote: Compressing objects:  15% (18/115)   [Kremote: Compressing objects:  16% (19/115)   [Kremote: Compressing objects:  17% (20/115)   [Kremote: Compressing objects:  18% (21/115)   [Kremote: Compressing objects:  19% (22/115)   [Kremote: Compressing objects:  20% (23/115)   [Kremote: Compressing objects:  21% (25/115)   [Kremote: Compressing objects:  22% (26/115)   [Kremote: Compressing objects:  23% (27/115)   [Kremote: Compressing objects:  24% (28/115)   [Kremote: Compressing objects:  25% (29/115)   [Kremote: Compressing objects:  26% (30/115)   [Kremote: Compressing objects:  27% (32/115)   [Kremote: Compressing objects:  28% (33/115)   [Kremote: Compressing objects:  29% (34/115)   [Kremote: Compressing objects:  30% (35/115)   [Kremote: Compressing objects:  31% (36/115)   [Kremote: Compressing objects:  32% (37/115)   [Kremote: Compressing objects:  33% (38/115)   [Kremote: Compressing objects:  34% (40/115)   [Kremote: Compressing objects:  35% (41/115)   [Kremote: Compressing objects:  36% (42/115)   [Kremote: Compressing objects:  37% (43/115)   [Kremote: Compressing objects:  38% (44/115)   [Kremote: Compressing objects:  39% (45/115)   [Kremote: Compressing objects:  40% (46/115)   [Kremote: Compressing objects:  41% (48/115)   [Kremote: Compressing objects:  42% (49/115)   [Kremote: Compressing objects:  43% (50/115)   [Kremote: Compressing objects:  44% (51/115)   [Kremote: Compressing objects:  45% (52/115)   [Kremote: Compressing objects:  46% (53/115)   [Kremote: Compressing objects:  47% (55/115)   [Kremote: Compressing objects:  48% (56/115)   [Kremote: Compressing objects:  49% (57/115)   [Kremote: Compressing objects:  50% (58/115)   [Kremote: Compressing objects:  51% (59/115)   [Kremote: Compressing objects:  52% (60/115)   [Kremote: Compressing objects:  53% (61/115)   [Kremote: Compressing objects:  54% (63/115)   [Kremote: Compressing objects:  55% (64/115)   [Kremote: Compressing objects:  56% (65/115)   [Kremote: Compressing objects:  57% (66/115)   [Kremote: Compressing objects:  58% (67/115)   [Kremote: Compressing objects:  59% (68/115)   [Kremote: Compressing objects:  60% (69/115)   [Kremote: Compressing objects:  61% (71/115)   [Kremote: Compressing objects:  62% (72/115)   [Kremote: Compressing objects:  63% (73/115)   [Kremote: Compressing objects:  64% (74/115)   [Kremote: Compressing objects:  65% (75/115)   [Kremote: Compressing objects:  66% (76/115)   [Kremote: Compressing objects:  67% (78/115)   [Kremote: Compressing objects:  68% (79/115)   [Kremote: Compressing objects:  69% (80/115)   [Kremote: Compressing objects:  70% (81/115)   [Kremote: Compressing objects:  71% (82/115)   [Kremote: Compressing objects:  72% (83/115)   [Kremote: Compressing objects:  73% (84/115)   [Kremote: Compressing objects:  74% (86/115)   [Kremote: Compressing objects:  75% (87/115)   [Kremote: Compressing objects:  76% (88/115)   [Kremote: Compressing objects:  77% (89/115)   [Kremote: Compressing objects:  78% (90/115)   [Kremote: Compressing objects:  79% (91/115)   [Kremote: Compressing objects:  80% (92/115)   [Kremote: Compressing objects:  81% (94/115)   [Kremote: Compressing objects:  82% (95/115)   [Kremote: Compressing objects:  83% (96/115)   [Kremote: Compressing objects:  84% (97/115)   [Kremote: Compressing objects:  85% (98/115)   [Kremote: Compressing objects:  86% (99/115)   [Kremote: Compressing objects:  87% (101/115)   [Kremote: Compressing objects:  88% (102/115)   [Kremote: Compressing objects:  89% (103/115)   [Kremote: Compressing objects:  90% (104/115)   [Kremote: Compressing objects:  91% (105/115)   [Kremote: Compressing objects:  92% (106/115)   [Kremote: Compressing objects:  93% (107/115)   [Kremote: Compressing objects:  94% (109/115)   [Kremote: Compressing objects:  95% (110/115)   [Kremote: Compressing objects:  96% (111/115)   [Kremote: Compressing objects:  97% (112/115)   [Kremote: Compressing objects:  98% (113/115)   [Kremote: Compressing objects:  99% (114/115)   [Kremote: Compressing objects: 100% (115/115)   [Kremote: Compressing objects: 100% (115/115), done.[K
+Receiving objects:   0% (1/501)   Receiving objects:   1% (6/501)   Receiving objects:   2% (11/501)   Receiving objects:   3% (16/501)   Receiving objects:   4% (21/501)   Receiving objects:   5% (26/501)   Receiving objects:   6% (31/501)   Receiving objects:   7% (36/501)   Receiving objects:   8% (41/501)   Receiving objects:   9% (46/501)   Receiving objects:  10% (51/501)   Receiving objects:  11% (56/501)   Receiving objects:  12% (61/501)   Receiving objects:  13% (66/501)   Receiving objects:  14% (71/501)   Receiving objects:  15% (76/501)   Receiving objects:  16% (81/501)   Receiving objects:  17% (86/501)   Receiving objects:  18% (91/501)   Receiving objects:  19% (96/501)   Receiving objects:  20% (101/501)   Receiving objects:  21% (106/501)   Receiving objects:  22% (111/501)   Receiving objects:  23% (116/501)   Receiving objects:  24% (121/501)   Receiving objects:  25% (126/501)   Receiving objects:  26% (131/501)   Receiving objects:  27% (136/501)   Receiving objects:  28% (141/501)   Receiving objects:  29% (146/501)   Receiving objects:  30% (151/501)   Receiving objects:  31% (156/501)   Receiving objects:  32% (161/501)   Receiving objects:  33% (166/501)   Receiving objects:  34% (171/501)   Receiving objects:  35% (176/501)   Receiving objects:  36% (181/501)   Receiving objects:  37% (186/501)   Receiving objects:  38% (191/501)   Receiving objects:  39% (196/501)   Receiving objects:  40% (201/501)   Receiving objects:  41% (206/501)   Receiving objects:  42% (211/501)   Receiving objects:  43% (216/501)   Receiving objects:  44% (221/501)   Receiving objects:  45% (226/501)   Receiving objects:  46% (231/501)   Receiving objects:  47% (236/501)   Receiving objects:  48% (241/501)   Receiving objects:  49% (246/501)   Receiving objects:  50% (251/501)   Receiving objects:  51% (256/501)   Receiving objects:  52% (261/501)   Receiving objects:  53% (266/501)   Receiving objects:  54% (271/501)   Receiving objects:  55% (276/501)   Receiving objects:  56% (281/501)   Receiving objects:  57% (286/501)   Receiving objects:  58% (291/501)   Receiving objects:  59% (296/501)   Receiving objects:  60% (301/501)   Receiving objects:  61% (306/501)   Receiving objects:  62% (311/501)   Receiving objects:  63% (316/501)   Receiving objects:  64% (321/501)   Receiving objects:  65% (326/501)   Receiving objects:  66% (331/501)   Receiving objects:  67% (336/501)   Receiving objects:  68% (341/501)   Receiving objects:  69% (346/501)   Receiving objects:  70% (351/501)   Receiving objects:  71% (356/501)   Receiving objects:  72% (361/501)   Receiving objects:  73% (366/501)   Receiving objects:  74% (371/501)   Receiving objects:  75% (376/501)   Receiving objects:  76% (381/501)   Receiving objects:  77% (386/501)   Receiving objects:  78% (391/501)   Receiving objects:  79% (396/501)   Receiving objects:  80% (401/501)   remote: Total 501 (delta 64), reused 0 (delta 0), pack-reused 383[K
+Receiving objects:  81% (406/501)   Receiving objects:  82% (411/501)   Receiving objects:  83% (416/501)   Receiving objects:  84% (421/501)   Receiving objects:  85% (426/501)   Receiving objects:  86% (431/501)   Receiving objects:  87% (436/501)   Receiving objects:  88% (441/501)   Receiving objects:  89% (446/501)   Receiving objects:  90% (451/501)   Receiving objects:  91% (456/501)   Receiving objects:  92% (461/501)   Receiving objects:  93% (466/501)   Receiving objects:  94% (471/501)   Receiving objects:  95% (476/501)   Receiving objects:  96% (481/501)   Receiving objects:  97% (486/501)   Receiving objects:  98% (491/501)   Receiving objects:  99% (496/501)   Receiving objects: 100% (501/501)   Receiving objects: 100% (501/501), 72.07 KiB | 0 bytes/s, done.
+Resolving deltas:   0% (0/301)   Resolving deltas:   8% (26/301)   Resolving deltas:  19% (58/301)   Resolving deltas:  25% (76/301)   Resolving deltas:  26% (79/301)   Resolving deltas:  30% (91/301)   Resolving deltas:  35% (107/301)   Resolving deltas:  36% (109/301)   Resolving deltas:  41% (126/301)   Resolving deltas:  44% (134/301)   Resolving deltas:  45% (136/301)   Resolving deltas:  48% (145/301)   Resolving deltas:  50% (153/301)   Resolving deltas:  51% (154/301)   Resolving deltas:  60% (181/301)   Resolving deltas:  61% (184/301)   Resolving deltas:  73% (220/301)   Resolving deltas:  76% (230/301)   Resolving deltas:  77% (233/301)   Resolving deltas:  78% (235/301)   Resolving deltas:  88% (267/301)   Resolving deltas:  89% (270/301)   Resolving deltas:  93% (280/301)   Resolving deltas:  97% (294/301)   Resolving deltas:  99% (298/301)   Resolving deltas: 100% (301/301)   Resolving deltas: 100% (301/301), done.
+Checking connectivity... done.
+[34m     *************************************
+     ***                               ***
+     ***     [32mBeginning Test Suite      [34m***
+     ***      [35mPlease be patient        [34m***
+     ***     [36m...and know the code      [34m***
+     ***                               ***
+     *************************************
+
+[30mcontributors:
+
+Julien Barbier <julien@holbertonschool.com>
+Bobby Yang <122@holbertonschool.com>
+David John Coleman II <lcsw@davidjohncoleman.com>
+Elaine Yeung <elaine.yeung@holbertonschool.com>
+
+[37m--------------------------------------------
+--------------------------------------------
+--------------------------------------------
+  >>     ./01_bin_ls/
+--------------------------------------------
+# test simple command /bin/ls
+test -> bin_ls: [[32mPASS[37m]
+[37m# Empty the PATH and check if ls still works
+test -> bin_ls_empty_path: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+Out of memory: Success
+>     expected error: 
+--------------------------------------------
+./01_bin_ls/bin_ls_empty_path: line 20: sh: No such file or directory
+[37m# Empty the PATH and check if '/bin/ls' still works (with path)
+test -> bin_ls_empty_path2: [[31mFAIL[37m]
+[30m--------------------!outputs differ!---------------------
+          your shell '<' -- expected output '>'
+---------------------------------------------------------
+[31m1,24d0
+< 01_bin_ls
+< 02_bin_ls_file
+< 03_ls
+< 04_no_stlib_funcs
+< 05_environment
+< 06_exit
+< 07_history
+< 08_parse-tokenize
+< AUTHORS
+< CONTRIBUTING.md
+< Dockerfile
+< README.md
+< checker_tmp_file_28628
+< config
+< diff.txt
+< error.txt
+< errorexpected.txt
+< expected.txt
+< hsh
+< init.sh
+< ls
+< shellfish.bash
+< test_shell
+< youroutput.txt
+[37m------------error outputs test--------------
+--------------------------------------------
+[31m** your shell has nothing written to stdout **
+**  when there is an expected error output  **
+>     expected error: 
+--------------------------------------------
+./01_bin_ls/bin_ls_empty_path2: line 20: sh: No such file or directory
+[37m# run ls with arguments
+test -> bin_ls_la_dir: [[32mPASS[37m]
+[37m# run /bin/ls many times, with a lot of spaces everywhere
+test -> bin_ls_spaces: [[32mPASS[37m]
+[37m# run /bin/ls 3 times
+test -> bin_ls_x3: [[32mPASS[37m]
+[37m# check if a medium size command line does not break the shell
+test -> medium_size_input: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./02_bin_ls_file/
+--------------------------------------------
+# test simple command /bin/ls through file
+test -> bin_ls_file: [[32mPASS[37m]
+[37m# run ls with arguments
+test -> bin_ls_la_dir_file: [[32mPASS[37m]
+[37m# run /bin/ls many times, with a lot of spaces everywhere
+test -> bin_ls_spaces_file: [[32mPASS[37m]
+[37m# run /bin/ls 3 times
+test -> bin_ls_x3_file: [[32mPASS[37m]
+[37m# check if a medium size command line does not break the shell
+test -> medium_size_input_file: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./03_ls/
+--------------------------------------------
+# simple test with ls to check if the shell can find ls in the PATH
+test -> ls: [[32mPASS[37m]
+[37m# run a mix of ls and /bin/ls many times
+test -> ls_bin_ls: [[32mPASS[37m]
+[37m# run ls
+test -> ls_bin_ls_spaces: [[32mPASS[37m]
+[37m# check that the PATH is checked in the right order
+test -> ls_current_path: [[31mFAIL[37m]
+[30m--------------------!outputs differ!---------------------
+          your shell '<' -- expected output '>'
+---------------------------------------------------------
+[31m1,24c1
+< 01_bin_ls
+< 02_bin_ls_file
+< 03_ls
+< 04_no_stlib_funcs
+< 05_environment
+< 06_exit
+< 07_history
+< 08_parse-tokenize
+< AUTHORS
+< CONTRIBUTING.md
+< Dockerfile
+< README.md
+< checker_tmp_file_6588
+< config
+< diff.txt
+< error.txt
+< errorexpected.txt
+< expected.txt
+< hsh
+< init.sh
+< ls
+< shellfish.bash
+< test_shell
+< youroutput.txt
+---
+> cisfun
+[37m[37m# check that the program ls is not found if the PATH is empty
+test -> ls_empty_path: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+Out of memory: Success
+[31m**   there is no expected error,   **
+** but your shell writes to stderr **
+[37m# run ls with spaces everywhere
+test -> ls_spaces: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./04_no_stlib_funcs/
+--------------------------------------------
+# check if the atoi function was used by using ltrace
+test -> no_atoi: [[32mPASS[37m]
+[37m# check if the getline function was used by using ltrace
+test -> no_getline: [[32mPASS[37m]
+[37m# check if the memcpy function was used by using ltrace
+test -> no_memcpy: [[31mFAIL[37m]
+[30m** ltrace returned these functions from your file:
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+[31m  3.28    0.005541          52       105 memcpy
+[37m------ ----------- ----------- --------- --------------------
+[37m# check if the memset function was used by using ltrace
+test -> no_memset: [[32mPASS[37m]
+[37m# check if the printf function was used by using ltrace
+test -> no_printf: [[32mPASS[37m]
+[37m# check if the strcat function was used by using ltrace
+test -> no_strcat: [[32mPASS[37m]
+[37m# check if the strcmp function was used by using ltrace
+test -> no_strcmp: [[32mPASS[37m]
+[37m# check if the strcpy function was used by using ltrace
+test -> no_strcpy: [[32mPASS[37m]
+[37m# check if the printf function was used by using ltrace
+test -> no_strdup: [[32mPASS[37m]
+[37m# check if the strlen function was used by using ltrace
+test -> no_strlen: [[31mFAIL[37m]
+[30m** ltrace returned these functions from your file:
+% time     seconds  usecs/call     calls      function
+------ ----------- ----------- --------- --------------------
+[31m  2.31    0.003489          46        75 strlen
+[37m------ ----------- ----------- --------- --------------------
+[37m# check if the strncat function was used by using ltrace
+test -> no_strncat: [[32mPASS[37m]
+[37m# check if the strstr function was used by using ltrace
+test -> no_strstr: [[32mPASS[37m]
+[37m# check if the strtok function was used by using ltrace
+test -> no_strtok: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./05_environment/
+--------------------------------------------
+# print env, standard
+test -> env: [37m[[32mPASS[37m]
+# print env with junk after env
+test -> env_junk: [[31mFAIL[37m]
+[30m--------------------!outputs differ!---------------------
+          your shell '<' -- expected output '>'
+---------------------------------------------------------
+[31m1d0
+< Failed: Command syntax: env
+[37m------------error outputs test--------------
+--------------------------------------------
+[31m** your shell has nothing written to stdout **
+**  when there is an expected error output  **
+>     expected error: 
+--------------------------------------------
+env: CheckerIsBrokenCallGuillaumeAndJulien: No such file or directory
+[37m# env with multiple random args after call to env
+test -> env_witharguments: [[31mFAIL[37m]
+[30m--------------------!outputs differ!---------------------
+          your shell '<' -- expected output '>'
+---------------------------------------------------------
+[31m1c1
+< Failed: Command syntax: env
+---
+> baba ganoush
+[37m[37m# Can you set env?
+test -> setenv: [[32mPASS[37m]
+[37m# Can you set and overwrite env?
+test -> setenv_overwrite: [[32mPASS[37m]
+[37m# Can you set env correctly with semicolons?
+test -> setenv_withsemicolons: [[31mFAIL[37m]
+[30m--------------------!outputs differ!---------------------
+          your shell '<' -- expected output '>'
+---------------------------------------------------------
+[31m0a1
+> DRWHO=We’reallstories,intheend.Justmakeitagoodone,eh?
+[37m[37m# Can you unset env?
+test -> unsetenv: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./06_exit/
+--------------------------------------------
+# exit with status
+test -> exit_with_status: [[32mPASS[37m]
+[37m# exit status 257
+test -> exit_with_status_1999: [[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./07_history/
+--------------------------------------------
+# exit with status
+test -> check_history: cat: /root/.simple_shell_history: No such file or directory
+[[32mPASS[37m]
+[37m--------------------------------------------
+  >>     ./08_parse-tokenize/
+--------------------------------------------
+# parse this command:  '/bin/lsls'
+test -> parse_binlsls: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+/bin/lsls: No such file or directory
+>     expected error: 
+--------------------------------------------
+sh: 1: /bin/lsls: not found
+[37m# parse this command 'els'
+test -> parse_els: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+execve: No such file or directory
+>     expected error: 
+--------------------------------------------
+sh: 1: els: not found
+[37m# parse 'envvvv' command
+test -> parse_env: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+execve: No such file or directory
+>     expected error: 
+--------------------------------------------
+sh: 1: envvvv: not found
+[37m# parse this: 'lsss'
+test -> parse_ls: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+execve: No such file or directory
+>     expected error: 
+--------------------------------------------
+sh: 1: lsss: not found
+[37m# parse this the command: 'pwd-'
+test -> parse_pwd: [[32mPASS[37m]
+------------error outputs test--------------
+--------------------------------------------
+<     your error: 
+--------------------------------------------
+execve: No such file or directory
+>     expected error: 
+--------------------------------------------
+sh: 1: pwd-: not found
+[37m[30m
