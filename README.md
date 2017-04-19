@@ -62,9 +62,9 @@ File Functions contained | Description and Return value
 ### What students should learn from this project
 
 ## Project Breakdown
-| Task # | Type | Short description | File name and link |
-| ---: | --- | --- | --- |
-|0 | **Mandatory**  | Write a function that converts a binary number to an unsigned int.<br><br>Prototype: `unsigned int binary_to_uint(const char *b);`<br>where `b` is pointing to a string of `0` and `1` chars<br>Return: the converted number, or 0 if<br>there is one or more chars in the string b that is not 0 or 1<br>b is NULL| File: [0-binary_to_uint.c](./0-binary_to_uint.c)|
+| Task # | Type | Short description | 
+| ---: | --- | --- | 
+|0 | **Mandatory**  | Write a README [link](/README.md)<br>Write a man for your shell.[link](/man_1_simple_shell)<br>You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker [link](/AUTHORS)
 
 ## Getting Started
 Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
@@ -93,6 +93,8 @@ exit
 ![hsh-compilation1](https://cloud.githubusercontent.com/assets/23224088/25164687/638bb300-2487-11e7-9484-8a4a24fde768.gif)
 
 ### Usage
+Once in ScarJo shell you can do interact with it as
+### Screenshots
 Once in ScarJo shell you can do interact 
 
 ## Contributing
