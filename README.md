@@ -11,8 +11,7 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 * [**Project Breakdown**](#project-breakdown)
 * [**Getting Started**](#getting-started)
     * [Installation](#installation)
-	* [Usage](#usage)
-    * [Screenshots](#screenshots)
+	* [Screenshots](#screenshots)
 * [**Contributing**](#contributing)
 * [**Team**](#team)
 * [**Resources**](#resources)
@@ -114,10 +113,10 @@ exit
 
 ![hsh-compilation1](https://cloud.githubusercontent.com/assets/23224088/25164687/638bb300-2487-11e7-9484-8a4a24fde768.gif)
 
-### Usage
-Once in ScarJo shell you can do interact with it as
 ### Screenshots
-Once in ScarJo shell you can do interact 
+Once in ScarJo shell you can interact with it in a number of ways.
+
+![hsh-usage](https://cloud.githubusercontent.com/assets/23224088/25169794/33528cca-249d-11e7-8c0a-a95fca7f10b8.gif)
 
 ## Contributing
 This project is a closed and contributions are not accepted at this time. 
