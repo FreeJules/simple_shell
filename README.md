@@ -62,9 +62,31 @@ File Functions contained | Description and Return value
 ### What students should learn from this project
 
 ## Project Breakdown
-| Task # | Type | Short description | 
-| ---: | --- | --- | 
-|0 | **Mandatory**  | Write a README [link](/README.md)<br>Write a man for your shell.[link](/man_1_simple_shell)<br>You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker [link](/AUTHORS)
+Task # | Type | Short description
+ ---: | --- | --- | 
+0 | **Mandatory** | Write a README [link](/README.md)<br>Write a man for your shell.[link](/man_1_simple_shell)<br>You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker [link](/AUTHORS)
+1 | **Mandatory** | Write a beautiful code that passes the Betty checks
+2 | **Mandatory** | Write a UNIX command line interpreter.<br><br>Your Shell should:<br><br><ul><li>Display a prompt and wait for the user to type a command. A command line always ends with a new line.</li><li>The prompt is displayed again each time a command has been executed.</li><li>The command lines are simple, no semi-columns, no pipes, no redirections or any other advanced features.</li><li>The command lines are made only of one word. No arguments will be passed to programs.</li><li>If an executable cannot be found, print an error message and display the prompt again.</li><li>Handle errors.</li><li>You have to handle the "end of file" condition (Ctrl+D). Exit with code 0</li></ul>You don't have to:<br><br><ul><li>use the PATH</li><li>implement built-ins</li><li>handle special characters : ", ', `, \, *, &, #</li><li>be able to move the cursor</li><li>handle commands with arguments</li></ul>
+3 | ***Advanced***| 
+4 | **Mandatory** |
+5 | ***Advanced***|
+6 | **Mandatory** |
+7 | **Mandatory** |
+8 | ***Advanced***|
+9 | ***Advanced***|
+10 | **Mandatory**  |
+11 | ***Advanced*** |
+12 | ***Advanced*** |
+13 | ***Advanced*** |
+14 | ***Advanced*** |
+15 | ***Advanced*** |
+16 | ***Advanced*** |
+17 | ***Advanced*** |
+18 | ***Advanced*** |
+19 | ***Advanced*** |
+20 | ***Advanced*** |
+21 | **Mandatory**  |
+22 | ***Advanced*** |
 
 ## Getting Started
 Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
