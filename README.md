@@ -24,8 +24,8 @@ A description of your project follows. A good description is clear, short, and t
 ScarJo Shell (hsh) is a simple UNIX command line shell and was built as an end of term project for [Holberton School](https://github.com/holbertonschool/). ScarJo includes many basic features present in the bash shell.
 #### File descriptions
 
-![Function layout](https://cloud.githubusercontent.com/assets/23224088/25165641/5b9504f8-248c-11e7-8d0d-c874620cea9a.png)
-Visualization (version 1) of how all functions interact
+![image](https://cloud.githubusercontent.com/assets/23224088/25165641/5b9504f8-248c-11e7-8d0d-c874620cea9a.png)
+To interact with image, [click here](https://sketchboard.me/XArlTLxbFDKu).
 
 File Functions contained | Description and Return value 
 ------ | :---
