@@ -19,7 +19,7 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 ---
 ## Project Details
 
-### Description
+### Description [top](#table-of-contents)
 ScarJo Shell (hsh) is a simple UNIX command line shell and was built as an end of term project for [Holberton School](https://github.com/holbertonschool/). ScarJo includes many basic features present in the bash shell.
 
 **Function visualization**
@@ -45,7 +45,7 @@ File Functions contained | Description and Return value
 **[run_command.c](/run_command.c)** <ul><li>`char **path_dirs_array(list_t **env_head)`</li><li>`char *cmd_in_path(char *str, list_t **env_head)`</li><li>`int run_command(char **line_tok, list_t **env_head, char *buffer)`</li></ul> | <ul>Description<ul><li>`path_dirs_array` - makes array of pointers for all dirs in the PATH</li><li>`cmd_in_path` - finds command in the PATH @str: pointer to first string in input line (command) @env_head: pointer to environ list</li><li>`run_command` - runs the command typed into shell prompt @line_tok: tokenized input line @env_head: pointer to environ list</li></ul>Return value<ul><li>`path_dirs_array` - Return: Array of pointers</li><li>`cmd_in_path` - Return: pointer to absolute path of command or NULL if not found</li><li>`run_command` - Return: Always 0 on success, 1 on error</li></ul></ul> |
 **[environment.c](/environment.c)**<ul><li>`char \*_getenv(const char *name)`</li><li>int _putenv(char *str)</li><li>int _setenv(const char *name, const char *value, int overwrite)</li><li>int _unsetenv(const char *name)</li><li>`int delete_node(list_t \*\*head, char *string)`</li></ul> | <ul><li>Description</li>	<ul><li>Contains helper functions that interact with environment variables.</li>	<li>  `*_getenv(const char *name)` searches environment list to find environment variable **name** and returns a pointer to the corresponding **value** string.</li>	<li>  `int _putenv(char *str)` changes or adds value of an environment variable</li>	<li>  `int _setenv(const char *name, const char *value, int overwrite)` change or add an environment variable</li>	<li>  `int _unsetenv(const char *name)` deletes the environment variable name from the environment</li>	<li>  `int delete_node(list_t \**head, char *string)` deletes the node with string of of a list_t</li></ul><li>Return value</li><ul><li>`*\_getenv(const char *name)` returns a pointer to the value in the environment, or NULL if there is no match</li>	<li>`\_putenv()` returns zero on success, or nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.</li>	<li>`\_setenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`\_unsetenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`delete_node()` returns 0 on success, or -1 on error</li></ul></ul>
 
-### Project Requirements
+### Project Requirements [top](#table-of-contents)
 - Allowed editors: `vi`, `vim`, `emacs`
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with `gcc 4.8.4` (`C90`) using the flags `-Wall -Werror -Wextra and -pedantic`
@@ -58,7 +58,7 @@ File Functions contained | Description and Return value
 - All your header files should be include guarded
 - Unless specified otherwise, your program must have the exact same output as `sh` as long as the exact same error output.
 
-### What students should learn from this project
+### What students should learn from this project [top](#table-of-contents)
 
 ## Getting Started
 Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
@@ -92,3 +92,7 @@ This project is a closed project and contributions are not accepted at this time
 ### Resources
 * Readme template from GitHub https://guides.github.com/features/wikis/
 * Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
+
+
+
+
