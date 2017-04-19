@@ -1,13 +1,14 @@
 # Scarjo
 Scarjo is a simple shell created as an end of term project for @holbertonschool.
 
-### Table of Contents
+## Table of Contents
 * [**Project Details**](#project-details)
 	* [Description](#description)
-		* [Function Prototypes](#function-prototypes)
+		* [Function Visualization](#function-visualization)
 		* [File descriptions](#file-descriptions)
 	* [Project Requirements](#project-requirements)
-	* [Support](#support)
+	* [Project Objectives](#what-students-should-learn-from-this-project)
+* [**Project Breakdown**](#project-breakdown)
 * [**Getting Started**](#getting-started)
     * [Installation](#installation)
 	* [Usage](#usage)
@@ -19,10 +20,10 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 ---
 ## Project Details
 
-### Description [top](#table-of-contents)
+### Description
 ScarJo Shell (hsh) is a simple UNIX command line shell and was built as an end of term project for [Holberton School](https://github.com/holbertonschool/). ScarJo includes many basic features present in the bash shell.
 
-**Function visualization**
+#### Function visualization
 ![image](https://cloud.githubusercontent.com/assets/23224088/25165641/5b9504f8-248c-11e7-8d0d-c874620cea9a.png)
 To interact with image, [click here](https://sketchboard.me/XArlTLxbFDKu).
 
@@ -45,7 +46,7 @@ File Functions contained | Description and Return value
 **[run_command.c](/run_command.c)** <ul><li>`char **path_dirs_array(list_t **env_head)`</li><li>`char *cmd_in_path(char *str, list_t **env_head)`</li><li>`int run_command(char **line_tok, list_t **env_head, char *buffer)`</li></ul> | <ul>Description<ul><li>`path_dirs_array` - makes array of pointers for all dirs in the PATH</li><li>`cmd_in_path` - finds command in the PATH @str: pointer to first string in input line (command) @env_head: pointer to environ list</li><li>`run_command` - runs the command typed into shell prompt @line_tok: tokenized input line @env_head: pointer to environ list</li></ul>Return value<ul><li>`path_dirs_array` - Return: Array of pointers</li><li>`cmd_in_path` - Return: pointer to absolute path of command or NULL if not found</li><li>`run_command` - Return: Always 0 on success, 1 on error</li></ul></ul> |
 **[environment.c](/environment.c)**<ul><li>`char \*_getenv(const char *name)`</li><li>int _putenv(char *str)</li><li>int _setenv(const char *name, const char *value, int overwrite)</li><li>int _unsetenv(const char *name)</li><li>`int delete_node(list_t \*\*head, char *string)`</li></ul> | <ul><li>Description</li>	<ul><li>Contains helper functions that interact with environment variables.</li>	<li>  `*_getenv(const char *name)` searches environment list to find environment variable **name** and returns a pointer to the corresponding **value** string.</li>	<li>  `int _putenv(char *str)` changes or adds value of an environment variable</li>	<li>  `int _setenv(const char *name, const char *value, int overwrite)` change or add an environment variable</li>	<li>  `int _unsetenv(const char *name)` deletes the environment variable name from the environment</li>	<li>  `int delete_node(list_t \**head, char *string)` deletes the node with string of of a list_t</li></ul><li>Return value</li><ul><li>`*\_getenv(const char *name)` returns a pointer to the value in the environment, or NULL if there is no match</li>	<li>`\_putenv()` returns zero on success, or nonzero  if an  error  occurs. In the event of an error, errno is set to indicate the cause.</li>	<li>`\_setenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`\_unsetenv()` returns zero on success, or -1 on error, with **errno** set to indicate the cause of the error</li>	<li>`delete_node()` returns 0 on success, or -1 on error</li></ul></ul>
 
-### Project Requirements [top](#table-of-contents)
+### Project Requirements
 - Allowed editors: `vi`, `vim`, `emacs`
 - All your files will be compiled on Ubuntu 14.04 LTS
 - Your programs and functions will be compiled with `gcc 4.8.4` (`C90`) using the flags `-Wall -Werror -Wextra and -pedantic`
@@ -58,7 +59,12 @@ File Functions contained | Description and Return value
 - All your header files should be include guarded
 - Unless specified otherwise, your program must have the exact same output as `sh` as long as the exact same error output.
 
-### What students should learn from this project [top](#table-of-contents)
+### What students should learn from this project
+
+## Project Breakdown
+| Task # | Type | Short description | File name and link |
+| ---: | --- | --- | --- |
+|0 | **Mandatory**  | Write a function that converts a binary number to an unsigned int.<br><br>Prototype: `unsigned int binary_to_uint(const char *b);`<br>where `b` is pointing to a string of `0` and `1` chars<br>Return: the converted number, or 0 if<br>there is one or more chars in the string b that is not 0 or 1<br>b is NULL| File: [0-binary_to_uint.c](./0-binary_to_uint.c)|
 
 ## Getting Started
 Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
@@ -70,9 +76,18 @@ git clone https://github.com/FreeJules/simple_shell.git
 ```
 2. On your machine, navigate (`cd`) to the newly created directory then compile with the following tags.
 
-```C
+```sh
 cd simple_shell
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+3. Run shell
+```sh
+./hsh
+```
+4. Run commands and enjoy!
+5. To exit
+```sh
+exit
 ```
 
 ![hsh-compilation1](https://cloud.githubusercontent.com/assets/23224088/25164687/638bb300-2487-11e7-9484-8a4a24fde768.gif)
@@ -81,7 +96,7 @@ gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 Once in ScarJo shell you can do interact 
 
 ## Contributing
-This project is a closed project and contributions are not accepted at this time. 
+This project is a closed and contributions are not accepted at this time. 
 
 ### Team
 
