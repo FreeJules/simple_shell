@@ -66,27 +66,27 @@ Task # | Type | Short description
  ---: | --- | --- | 
 0 | **Mandatory** | Write a README [link](/README.md)<br>Write a man for your shell.[link](/man_1_simple_shell)<br>You should have an AUTHORS file at the root of your repository, listing all individuals having contributed content to the repository. Format, see Docker [link](/AUTHORS)
 1 | **Mandatory** | Write a beautiful code that passes the Betty checks
-2 | **Mandatory** | Write a UNIX command line interpreter.<br><br>Your Shell should:<br><br><ul><li>Display a prompt and wait for the user to type a command. A command line always ends with a new line.</li><li>The prompt is displayed again each time a command has been executed.</li><li>The command lines are simple, no semi-columns, no pipes, no redirections or any other advanced features.</li><li>The command lines are made only of one word. No arguments will be passed to programs.</li><li>If an executable cannot be found, print an error message and display the prompt again.</li><li>Handle errors.</li><li>You have to handle the "end of file" condition (Ctrl+D). Exit with code 0</li></ul>You don't have to:<br><br><ul><li>use the PATH</li><li>implement built-ins</li><li>handle special characters : ", ', `, \, *, &, #</li><li>be able to move the cursor</li><li>handle commands with arguments</li></ul>
-3 | ***Advanced***| 
-4 | **Mandatory** |
-5 | ***Advanced***|
-6 | **Mandatory** |
-7 | **Mandatory** |
-8 | ***Advanced***|
-9 | ***Advanced***|
-10 | **Mandatory**  |
-11 | ***Advanced*** |
-12 | ***Advanced*** |
-13 | ***Advanced*** |
-14 | ***Advanced*** |
-15 | ***Advanced*** |
-16 | ***Advanced*** |
-17 | ***Advanced*** |
-18 | ***Advanced*** |
-19 | ***Advanced*** |
-20 | ***Advanced*** |
-21 | **Mandatory**  |
-22 | ***Advanced*** |
+2 | **Mandatory** | Write a UNIX command line interpreter.<br><br>Your Shell should:<br><ul><li>Display a prompt and wait for the user to type a command. A command line always ends with a new line.</li><li>The prompt is displayed again each time a command has been executed.</li><li>The command lines are simple, no semi-columns, no pipes, no redirections or any other advanced features.</li><li>The command lines are made only of one word. No arguments will be passed to programs.</li><li>If an executable cannot be found, print an error message and display the prompt again.</li><li>Handle errors.</li><li>You have to handle the "end of file" condition (Ctrl+D). Exit with code 0</li></ul>You don't have to:<br><ul><li>use the PATH</li><li>implement built-ins</li><li>handle special characters : ", ', `, \, *, &, #</li><li>be able to move the cursor</li><li>handle commands with arguments</li></ul>
+3 | ***Advanced***| Simple shell 0.1 +<br><li>Write your own getline function</li><li>Use a buffer to read many chars at once and call the least possible the readsystem call</li><li>You will need to use static variables</li><li>You are not allowed to use getline</li>You don't have to:<br><li>be able to move the cursor</li> 
+4 | **Mandatory** | Simple shell 0.1 +<br><li>Handle command lines with arguments</li>
+5 | ***Advanced***| Simple shell 0.2 +<br><li>You are not allowed to use strtok</li>
+6 | **Mandatory** | Simple shell 0.2 +<br><li>Handle the PATH</li>
+7 | **Mandatory** | Simple shell 0.3 +<br><li>Implement the exit buit-in, that exits the shell</li><li>Usage: exit</li><li>You don't have to handle any argument to the built-in exit</li>
+8 | ***Advanced***| Simple shell 0.4 +<br><li>handle arguments for the built-in exit</li><li>Usage: exit status, where status is an integer used to exit the shell</li>
+9 | ***Advanced***| Simple shell 0.4 +<br><li>Handle Ctrl+C: your shell should not quit when the user inputs ^C</li>man 2 signal.
+10 | **Mandatory**  | Simple shell 4.0 +<br><li>Implement the env built-in, that prints the current environment</li>
+11 | ***Advanced*** | Implement the setenv and unsetenv builtin commands<br>**setenv**<br><li>Initialize a new environment variable, or modify an existing one</li><li>Command syntax: setenv VARIABLE VALUE</li>**unsetenv**<br><li>Remove a environment variable</li><li>Command syntax: unsetenv VARIABLE</li>
+12 | ***Advanced*** | Simple shell 1.0 +<br><br>Implement the builtin command cd:<br><li>Changes the current directory of the process.</li><li>Command syntax: cd [DIRECTORY]</li><li>If no argument is given to cd the command must be interpreted like cd $HOME</li><li>You have to handle the command cd -</li><li>You have to update the environment variable PWD when you change directory</li>man chdir, man getcwd
+13 | ***Advanced*** | Simple shell 1.0 +<br>Handle the commands separator ;
+14 | ***Advanced*** | Simple shell 1.0 +<br>Handle the && and || shell logical operators.
+15 | ***Advanced*** | Simple shell 1.0 +<br><li>Handle aliases</li>
+16 | ***Advanced*** | Simple shell 1.0 +<br><li>Handle variables replacement</li><li>Handle the $? variable</li><li>Handle the $$ variable</li>
+17 | ***Advanced*** | Simple shell 1.0 +<br><li>Handle comments (#)</li>
+18 | ***Advanced*** | Simple shell 1.0 +<br><li>Implement the help buit-in</li><li>Usage: help [BUILTIN]</li>
+19 | ***Advanced*** | Simple shell 1.0 +<br><li>Implement the history built-in, without any argument</li><li>The history built-in displays the history list, one command by line, preceded with line numbers (starting at 0)</li><li>On exit, write the entire history, without line numbers, to a file named .simple_shell_history in the directory $HOME</li><li>When the shell starts, read the file .simple_shell_history in the directory $HOME if it exists, and set the first line number to the total number of lines in the file modulo 4096</li>
+20 | ***Advanced*** | Simple shell 0.1 +<br><li>Usage: simple_shell [filename]</li><li>Your shell can take a file as a command line argument</li><li>The file contains all the commands that your shell should run before exiting</li><li>The file should contain one command per line</li><li>In this mode, the shell should not print a prompt and should not read from stdin</li>
+21 | **Mandatory**  | Write a blog post describing step by step what happens when you type ls -l and hit Enter in a shell. Try to explain every step you know of, going in as much details as you can, give examples and draw diagrams when needed. You should merge your previous knowledge of the shell with the specifics of how it works under the hoods (including syscalls).
+22 | ***Advanced*** | Build a test suite for your shell.<br><li>The test suite should cover every tasks from 0. to 20.</li><li>The test suite should cover every regular cases (many different examples) and edge cases possible</li><li>The entire class will work on the same test suite. Use only one repository (don't forget the README.md file)</li><li>Start adding tests asap and not just before the deadline in order to help everyone from day 0</li><li>You can take (or fork) inspiration from this example, but it is not to follow this format/way</li><li>Adopt a style and be consisten. You can for instance follow this style guide. If you chose a style that already exist, add it to the README in a style section. If you write your own, create a wiki page attached to the project and refer to it in the README style section.</li><li>If you choose to use this code, make sure to update the style accordingly</li><li>You should have an AUTHORS file, listing all individuals having contributed content to the repository. Format, see Docker</li><br>This is a task shared by everyone in the class. Everyone will get the same score for this task. Go team!
 
 ## Getting Started
 Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
