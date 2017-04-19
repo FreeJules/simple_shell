@@ -37,10 +37,8 @@ int _setenv(char *name, char *value, list_t **env_head)
 {
 	char *ptr, *new_ptr;
 	list_t *ret_ptr;
-/*	list_t *tmp;
 
-	tmp = *env_head;
-*/	new_ptr = var_str(name, value);
+	new_ptr = var_str(name, value);
 	if (new_ptr == NULL)
 	{
 		perror(ENOMEM);
@@ -54,6 +52,7 @@ int _setenv(char *name, char *value, list_t **env_head)
 		ret_ptr = add_node_end(env_head, new_ptr);
 		if (ret_ptr == NULL)
 		{
+			free(new_ptr);
 			perror(ENOMEM);
 			return (1);
 		}
@@ -127,6 +126,7 @@ int delete_node(list_t **head, char *string)
 		{
 			removeNode = tmp->next;
 			tmp->next = removeNode->next;
+			free(removeNode->str);
 			free(removeNode);
 			return (0);
 		}

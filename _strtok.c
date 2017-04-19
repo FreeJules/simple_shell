@@ -64,7 +64,7 @@ char **strtow(char *str, char delim)
 			words[j] = NULL;
 			return (words);
 		}
-		words[j] = malloc(sizeof(char) * _wrdlen(str + i, delim) + 1);
+		words[j] = malloc(sizeof(char) * (_wrdlen(str + i, delim) + 1));
 		if (words[j] == NULL)
 		{
 			for (k = j - 1; k >= 0; k--)
