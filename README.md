@@ -14,8 +14,8 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 	* [Usage](#usage)
     * [Screenshots](#screenshots)
 * [**Contributing**](#contributing)
-	* [Team](#team)
-	* [Resources](#resources)
+* [**Team**](#team)
+* [**Resources**](#resources)
 
 ---
 ## Project Details
@@ -122,13 +122,13 @@ Once in ScarJo shell you can do interact
 ## Contributing
 This project is a closed and contributions are not accepted at this time. 
 
-### Team
+## Team
 
 [![Julija Lee](https://avatars0.githubusercontent.com/u/6486822?v=3&s=230)](https://github.com/FreeJules/) | [![Elaine Yeung](https://avatars3.githubusercontent.com/u/23224088?v=3&s=230)](https://github.com/yeungegs)
 :---:|:---:
 [Julija Lee](https://github.com/FreeJules) <a target="_blank" href="https://twitter.com/leejulija"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a> | [Elaine Yeung](https://github.com/yeungegs) <a target="_blank" href="https://twitter.com/egsy"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a>
 
-### Resources
+## Resources
 * Readme template from GitHub https://guides.github.com/features/wikis/
 * Docker generate-authors script https://github.com/docker/docker/blob/master/hack/generate-authors.sh
 
