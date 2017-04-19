@@ -10,11 +10,10 @@ Scarjo is a simple shell created as an end of term project for @holbertonschool.
 	* [Support](#support)
 * [**Getting Started**](#getting-started)
     * [Installation](#installation)
-    * [Setup](#setup)
 	* [Usage](#usage)
     * [Screenshots](#screenshots)
 * [**Contributing**](#contributing)
-	* [Credits](#credits)
+	* [Team](#team)
 	* [Resources](#resources)
 
 ---
@@ -58,34 +57,33 @@ File Functions contained | Description and Return value |
 ### Support
 
 ## Getting Started
-To use this shell first clone https://github.com/FreeJules/simple_shell.git
-### Installation
-Clone this repository to your local machine by 
+Using ScarJo shell is as easy as 1-2-3! Simply clone this repository onto your local machine, compile with the flags listed below and run!
 
-On your machine compile with the following tags
+### Installation
+1. Clone
+```sh
+git clone https://github.com/FreeJules/simple_shell.git
+```
+2. On your machine, navigate (`cd`) to the newly created directory then compile with the following tags.
+
 ```C
+cd simple_shell
 gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
 ```
-![hsh-compilation](https://cloud.githubusercontent.com/assets/23224088/25164495/2baef358-2486-11e7-8d66-3ed61adc1004.gif)
 
-*Installation is the next section in an effective README. Tell other users how to install your project locally. Optionally, include a gif to make the process even more clear for other people.*
-
-### Setup
+![hsh-compilation1](https://cloud.githubusercontent.com/assets/23224088/25164687/638bb300-2487-11e7-9484-8a4a24fde768.gif)
 
 ### Usage
-*The next section is usage, in which you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.*
+Once in ScarJo shell you can do interact 
 
 ## Contributing
-Larger projects often have sections on contributing to their project, in which contribution instructions are outlined. Sometimes, this is a separate file. If you have specific contribution preferences, explain them so that other developers know how to best contribute to your work. To learn more about how to help others contribute, check out the guide for (setting guidelines for repository contributors)[https://help.github.com/articles/setting-guidelines-for-repository-contributors/].
+This project is a closed project and contributions are not accepted at this time. 
 
 ### Team
 
 [![Julija Lee](https://avatars0.githubusercontent.com/u/6486822?v=3&s=230)](https://github.com/FreeJules/) | [![Elaine Yeung](https://avatars3.githubusercontent.com/u/23224088?v=3&s=230)](https://github.com/yeungegs)
 :---:|:---:
 [Julija Lee](https://github.com/FreeJules) <a target="_blank" href="https://twitter.com/leejulija"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a> | [Elaine Yeung](https://github.com/yeungegs) <a target="_blank" href="https://twitter.com/egsy"> <img src="https://cloud.githubusercontent.com/assets/23224088/24941419/2f3fc5ce-1eff-11e7-9ed3-85693579df09.png" height="20"></a>
-
-### License
-Finally, include a section for the license of your project. For more information on choosing a license, check out GitHub’s licensing guide!
 
 ### Resources
 * Readme template from GitHub https://guides.github.com/features/wikis/
