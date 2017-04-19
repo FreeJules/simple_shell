@@ -8,7 +8,7 @@
  */
 int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 {
-	int chars_read, old_len, retval = 0, ec1, ec2;
+	int chars_read, old_len, retval = 0;
 	char **line_tok;
 	list_t *tmp = *env_head;
 
@@ -29,14 +29,12 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 			retval = 1;
 			break;
 		}
-		line = _memcpy(line, buffer, chars_read);
+		line = mem_cpy(line, buffer, chars_read);
 		if (line[0] != '\0')
 		{
 			line_tok = strtow(line, ' '); /* tokenize input line */
 			retval = built_ins(line_tok, &tmp); /* if built-in */
-			ec1 = exit_shell(line_tok[0]); /*exit check 1 */
-			ec2 = arr_size(line_tok) < 3; /* exit check 2 */
-			if (ec1 && ec2 && retval != -1) /* if exit check */
+			if (exit_shell(line_tok) && retval != -1) /* if exit check */
 			{
 				free_array(line_tok);
 				break;

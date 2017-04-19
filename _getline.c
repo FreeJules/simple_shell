@@ -32,17 +32,18 @@ int _getline(char *input, int size)
 }
 /**
  * exit_shell - if user types 'exit' exit shell
- * @line: pointer to a buffer where input line was stored
+ * @line_tok: pointer to a tokenized input line
  * Return: 1 if want to exit, 0 otherwise
  */
-int exit_shell(char *line)
+int exit_shell(char **line_tok)
 {
-	int cmp, lend, lline;
+	int cmp, lend, lline, size;
 
-	cmp = _strncmp(line, END, _strlen(END));
+	size = arr_size(line_tok) < 3;
+	cmp = _strncmp(line_tok[0], END, _strlen(END));
 	lend = _strlen(END);
-	lline = _strlen(line);
-	if (cmp == 0 && lend == lline)
+	lline = _strlen(line_tok[0]);
+	if (cmp == 0 && lend == lline && size)
 		return (1);
 	return (0);
 }
@@ -59,13 +60,13 @@ void clear_buffer(char *buffer)
 		buffer[i] = 0;
 }
 /**
- * _memcpy - copies memory area
+ * mem_cpy - copies memory area
  * @dest: memory area to copy to
  * @src: memory area copying from
  * @n: how many bytes to copy
  * Return: Pointer to dest
  */
-char *_memcpy(char *dest, char *src, int n)
+char *mem_cpy(char *dest, char *src, int n)
 {
 	int i;
 

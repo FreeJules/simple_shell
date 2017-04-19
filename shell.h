@@ -81,9 +81,9 @@ int delete_node(list_t **head, char *string);
 char *var_str(char *name, char *value);
 /* _getline.c */
 int _getline(char *input, int size);
-int exit_shell(char *line);
+int exit_shell(char **line_tok);
 void clear_buffer(char *buffer);
-char *_memcpy(char *dest, char *src, int n);
+char *mem_cpy(char *dest, char *src, int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 /* cmd_line_loop.c */
 int cmd_line_loop(char *buffer, char *line, list_t **env_head);
