@@ -12,10 +12,7 @@ int built_ins(char **input, list_t **env_head)
 		{"env", print_env},
 		{"setenv", set_env},
 		{"unsetenv", unset_env},
-/*		{"cd", change_dir},
-		{"help", help},
-		{"history", history},
-*/		{NULL, NULL}
+		{NULL, NULL}
 	};
 	int i, retval;
 	list_t *tmp;
@@ -64,10 +61,7 @@ int exit_bi(char **line)
 	if (size == 2)
 	{
 		status = _atoi(line[1]);
-/*		if (status == 1 && (_strcmp(line[1], "1") != 0))
-			return (1);
-		else
-*/			return (status);
+		return (status);
 	}
 	return (1);
 }
