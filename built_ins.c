@@ -20,7 +20,7 @@ int built_ins(char **input, list_t **env_head)
 	tmp = *env_head;
 	if (!input)
 	{
-		perror("built_ins: tokenized line is NULL");
+		perror("built_ins");
 		return (1);
 	}
 	i = 0;
@@ -53,7 +53,7 @@ int exit_bi(char **line)
 	size = arr_size(line);
 	if (size > 2)
 	{
-		perror("Failed: Command syntax: exit status");
+		_strprint("Failed: Command syntax: exit status\n");
 		return (1);
 	}
 	if (size == 1)
@@ -80,7 +80,7 @@ int print_env(char **line, list_t **env_head)
 	size = arr_size(line);
 	if (size > 1)
 	{
-		perror("Failed: Command syntax: env");
+		_strprint("Failed: Command syntax: env\n");
 		return (1);
 	}
 	print_list(tmp);
@@ -102,7 +102,7 @@ int set_env(char **line, list_t **env_head)
 	size = arr_size(line);
 	if (size != 3)
 	{
-		perror("Failed: Command syntax: setenv VARIABLE VALUE");
+		_strprint("Failed: Command syntax: setenv VARIABLE VALUE\n");
 		return (1);
 	}
 	retval = _setenv(line[1], line[2], &tmp);
@@ -123,7 +123,7 @@ int unset_env(char **line, list_t **env_head)
 	size = arr_size(line);
 	if (size != 2)
 	{
-		perror("Failed: Command syntax: unsetenv VARIABLE");
+		_strprint("Failed: Command syntax: unsetenv VARIABLE\n");
 		return (1);
 	}
 	retval = _unsetenv(line[1], &tmp);
