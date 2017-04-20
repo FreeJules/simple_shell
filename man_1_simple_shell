@@ -1,0 +1,34 @@
+.TH _SCARJO_SHELL 1 "2017 APR 14" LOCAL "HOLBERTON SCHOOL BATCH 2"
+
+.SH NAME
+.SH SYNOPSIS
+.SH DESCRIPTION
+.SH OPTIONS            [Normally only in Sections 1, 8]
+.SH EXIT STATUS        [Normally only in Sections 1, 8]
+.SH ENVIRONMENT
+.SH FILES
+.SH CONFORMING TO
+.SH NOTES
+.SH BUGS
+.SH EXAMPLE
+.SH AUTHORS
+.SH SEE ALSO
+.B  Bold
+
+.BI Bold alternating with italics (especially useful for function specifications)
+
+.BR Bold alternating with Roman (especially useful for referring to other manual pages)
+
+.I  Italics
+
+.IB Italics alternating with bold
+
+.IR Italics alternating with Roman
+
+.RB Roman alternating with bold
+
+.RI Roman alternating with italics
+
+.SB Small alternating with bold
+
+.SM Small (useful for acronyms)
