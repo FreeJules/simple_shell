@@ -1,9 +1,607 @@
 .TH _SCARJO_SHELL 1 "2017 APR 14" LOCAL "HOLBERTON SCHOOL BATCH 2"
 
 .SH NAME
+ScarJo Shell \- a simple UNIX command interpreter (shell) built as an end of term project for Holberton School
 .SH SYNOPSIS
+.B scarjo
+[options]
+[command_string | file]
 .SH DESCRIPTION
-.SH OPTIONS            [Normally only in Sections 1, 8]
+.B ScarJo Shell
+is an \fBsh\fR-compatible command language interpreter that executes limited commands read from the standard input.
+.PP
+.B ScarJo Shell
+is \fBnot\fR intended to be a \fBfully\fR conformant implementation of the Shell and Utilities portion of the IEEE POSIX specification (IEEE Standard 1003.1).
+.SH DEFINITIONS
+.PP
+The following definitions are used throughout the rest of this
+document.
+.PD 0
+.TP
+.B blank 
+A space or tab.
+.TP
+.B word
+A sequence of characters considered as a single unit by the shell.
+Also known as a
+.BR token .
+.TP
+.B name
+A 
+.I word
+consisting only of alphanumeric characters and underscores, and
+beginning with an alphabetic character or an underscore.  Also
+referred to as an
+.BR identifier .
+.TP
+.B metacharacter
+A character that, when unquoted, separates words.  One of the following:
+.br
+.RS
+.PP
+.if t \fB|  &  ;  (  )  <  >  space  tab\fP
+.if n \fB|  & ; ( ) < > space tab\fP
+.RE
+.PP
+.TP
+.B control operator
+A \fItoken\fP that performs a control function.  It is one of the following
+symbols:
+.RS
+.PP
+.if t \fB||  &  &&  ;  ;;  (  )  |  |&    <newline>\fP
+.if n \fB|| & && ; ;; ( ) | |& <newline>\fP
+.RE
+.B **********************************************
+.P
+.B "ScarJo Shell only recognizes \fB<newline>\fP"
+.P
+.B **********************************************
+.PD
+.SH "'SIMPLE COMMANDS ONLY,' SAYS SCARJO SHELL"
+.PP
+A \fIsimple command\fP is a sequence of optional variable assignments
+followed by \fBblank\fP-separated words and redirections, and
+terminated by a \fIcontrol operator\fP.  The first word
+specifies the command to be executed, and is passed as argument zero.
+The remaining words are passed as arguments to the invoked command.
+.PP
+The return value of a \fIsimple command\fP is its exit status, or
+128+\fIn\^\fP if the command is terminated by signal
+.IR n .
+o.SH "SIMPLE COMMAND EXPANSION"
+When a simple command is executed, the shell performs the following
+expansions, assignments, and redirections, from left to right.
+.IP 1.
+The words that the parser has marked as variable assignments (those
+preceding the command name) and redirections are saved for later
+processing.
+.IP 2.
+The words that are not variable assignments or redirections are
+expanded.  If any words remain after expansion, the first word
+is taken to be the name of the command and the remaining words are
+the arguments.
+.IP 3.
+Redirections are performed as described above under
+.SM
+.BR REDIRECTION .
+.IP 4.
+The text after the \fB=\fP in each variable assignment undergoes tilde
+expansion, parameter expansion, command substitution, arithmetic expansion,
+and quote removal before being assigned to the variable.
+.PP
+If no command name results, the variable assignments affect the current
+shell environment.  Otherwise, the variables are added to the environment
+of the executed command and do not affect the current shell environment.
+If any of the assignments attempts to assign a value to a readonly variable,
+an error occurs, and the command exits with a non-zero status.
+.PP
+If no command name results, redirections are performed, but do not
+affect the current shell environment.  A redirection error causes the
+command to exit with a non-zero status.
+.PP
+If there is a command name left after expansion, execution proceeds as
+described below.  Otherwise, the command exits.  If one of the expansions
+contained a command substitution, the exit status of the command is
+the exit status of the last command substitution performed.  If there
+were no command substitutions, the command exits with a status of zero.
+
+
+.SH "COMMAND EXECUTION"
+After a command has been split into words, if it results in a
+simple command and an optional list of arguments, the following
+actions are taken.
+.PP
+If the command name contains no slashes, the shell attempts to
+locate it.  If there exists a shell function by that name, that
+function is invoked as described above in
+.SM
+.BR FUNCTIONS .
+If the name does not match a function, the shell searches for
+it in the list of shell builtins.  If a match is found, that
+builtin is invoked.
+.PP
+If the name is neither a shell function nor a builtin,
+and contains no slashes,
+.B ScarJo shell
+searches each element of the
+.SM
+.B PATH
+for a directory containing an executable file by that name.
+.B ScarJo Shell
+uses a hash table to remember the full pathnames of executable
+files (see
+.B hash
+under
+.SM
+.B "SHELL BUILTIN COMMANDS"
+below).
+A full search of the directories in
+.SM
+.B PATH
+is performed only if the command is not found in the hash table.
+If the search is unsuccessful, the shell searches for a defined shell
+function named \fBcommand_not_found_handle\fP.
+If that function exists, it is invoked with the original command and
+the original command's arguments as its arguments, and the function's
+exit status becomes the exit status of the shell.
+If that function is not defined, the shell prints an error
+message and returns an exit status of 127.
+.PP
+If the search is successful, or if the command name contains
+one or more slashes, the shell executes the named program in a
+separate execution environment.
+Argument 0 is set to the name given, and the remaining arguments
+to the command are set to the arguments given, if any.
+.PP
+If this execution fails because the file is not in executable
+format, and the file is not a directory, it is assumed to be
+a \fIshell script\fP, a file
+containing shell commands.  A subshell is spawned to execute
+it.  This subshell reinitializes itself, so
+that the effect is as if a new shell had been invoked
+to handle the script, with the exception that the locations of
+commands remembered by the parent (see
+.B hash
+below under
+.SM
+\fBSHELL BUILTIN COMMANDS\fP)
+are retained by the child.
+.PP
+If the program is a file beginning with
+.BR #! ,
+the remainder of the first line specifies an interpreter
+for the program.  The shell executes the
+specified interpreter on operating systems that do not
+handle this executable format themselves.  The arguments to the 
+interpreter consist of a single optional argument following the
+interpreter name on the first line of the program, followed
+by the name of the program, followed by the command
+arguments, if any.
+.SH COMMAND EXECUTION ENVIRONMENT
+The shell has an \fIexecution environment\fP, which consists of the
+following:
+.IP \(bu
+open files inherited by the shell at invocation, as modified by
+redirections supplied to the \fBexec\fP builtin
+.IP \(bu
+the current working directory as set by \fBcd\fP, \fBpushd\fP, or
+\fBpopd\fP, or inherited by the shell at invocation
+.IP \(bu
+the file creation mode mask as set by \fBumask\fP or inherited from
+the shell's parent
+.IP \(bu
+current traps set by \fBtrap\fP
+.IP \(bu
+shell parameters that are set by variable assignment or with \fBset\fP
+or inherited from the shell's parent in the environment
+.IP \(bu
+shell functions defined during execution or inherited from the shell's
+parent in the environment
+.IP \(bu
+options enabled at invocation (either by default or with command-line
+arguments) or by \fBset\fP
+.IP \(bu
+options enabled by \fBshopt\fP
+.IP \(bu
+shell aliases defined with \fBalias\fP
+.IP \(bu
+various process IDs, including those of background jobs, the value
+of \fB$$\fP, and the value of
+.SM
+.B PPID
+.PP
+When a simple command other than a builtin or shell function
+is to be executed, it
+is invoked in a separate execution environment that consists of
+the following.  Unless otherwise noted, the values are inherited
+from the shell.
+.if n .sp 1
+.IP \(bu
+the shell's open files, plus any modifications and additions specified
+by redirections to the command
+.IP \(bu
+the current working directory
+.IP \(bu
+the file creation mode mask
+.IP \(bu
+shell variables and functions marked for export, along with variables
+exported for the command, passed in the environment
+.IP \(bu
+traps caught by the shell are reset to the values inherited from the
+shell's parent, and traps ignored by the shell are ignored
+.PP
+A command invoked in this separate environment cannot affect the
+shell's execution environment. 
+.PP
+Command substitution, commands grouped with parentheses,
+and asynchronous commands are invoked in a
+subshell environment that is a duplicate of the shell environment,
+except that traps caught by the shell are reset to the values
+that the shell inherited from its parent at invocation.  Builtin
+commands that are invoked as part of a pipeline are also executed in a
+subshell environment.  Changes made to the subshell environment
+cannot affect the shell's execution environment.
+.PP
+Subshells spawned to execute command substitutions inherit the value of
+the \fB\-e\fP option from the parent shell.  When not in \fIposix\fP mode,
+\fBScarJo shell\fP clears the \fB\-e\fP option in such subshells.
+.PP
+If a command is followed by a \fB&\fP and job control is not active, the
+default standard input for the command is the empty file \fI/dev/null\fP.
+Otherwise, the invoked command inherits the file descriptors of the calling
+shell as modified by redirections.
+.SH ENVIRONMENT
+When a program is invoked it is given an array of strings
+called the
+.IR environment .
+This is a list of 
+\fIname\fP\-\fIvalue\fP pairs, of the form
+.IR "name\fR=\fPvalue" .
+.PP
+The shell provides several ways to manipulate the environment.
+On invocation, the shell scans its own environment and
+creates a parameter for each name found, automatically marking
+it for
+.I export
+to child processes.  Executed commands inherit the environment.
+The
+.B export
+and
+.B declare \-x
+commands allow parameters and functions to be added to and
+deleted from the environment.  If the value of a parameter
+in the environment is modified, the new value becomes part
+of the environment, replacing the old.  The environment
+inherited by any executed command consists of the shell's
+initial environment, whose values may be modified in the shell,
+less any pairs removed by the
+.B unset
+command, plus any additions via the
+.B export
+and
+.B declare \-x
+commands.
+.PP
+The environment for any
+.I simple command
+or function may be augmented temporarily by prefixing it with
+parameter assignments, as described above in
+.SM
+.BR PARAMETERS .
+These assignment statements affect only the environment seen
+by that command.
+.PP
+If the 
+.B \-k
+option is set (see the
+.B set
+builtin command below), then
+.I all
+parameter assignments are placed in the environment for a command,
+not just those that precede the command name.
+.PP
+When
+.B ScarJo shell
+invokes an external command, the variable
+.B _
+is set to the full filename of the command and passed to that
+command in its environment.
+.SH "EXIT STATUS"
+.PP
+The exit status of an executed command is the value returned by the
+\fIwaitpid\fP system call or equivalent function.  Exit statuses
+fall between 0 and 255, though, as explained below, the shell may
+use values above 125 specially.  Exit statuses from shell builtins and
+compound commands are also limited to this range. Under certain
+circumstances, the shell will use special values to indicate specific
+failure modes.
+.PP
+For the shell's purposes, a command which exits with a 
+zero exit status has succeeded.  An exit status of zero
+indicates success.  A non-zero exit status indicates failure.
+When a command terminates on a fatal signal \fIN\fP, \fBScarJo shell\fP uses
+the value of 128+\fIN\fP as the exit status.
+.PP
+If a command is not found, the child process created to
+execute it returns a status of 127.  If a command is found
+but is not executable, the return status is 126.
+.PP
+If a command fails because of an error during expansion or redirection,
+the exit status is greater than zero.
+.PP
+Shell builtin commands return a status of 0 (\fItrue\fP) if
+successful, and non-zero (\fIfalse\fP) if an error occurs
+while they execute. 
+All builtins return an exit status of 2 to indicate incorrect usage.
+.PP
+\fBScarJo Shell\fP itself returns the exit status of the last command
+executed, unless a syntax error occurs, in which case it exits
+with a non-zero value.  See also the \fBexit\fP builtin
+command below.
+.SH SIGNALS
+When \fBScarJo shell\fP is interactive, in the absence of any traps, it ignores
+.SM
+.B SIGTERM
+(so that \fBkill 0\fP does not kill an interactive shell),
+and
+.SM
+.B SIGINT
+is caught and handled (so that the \fBwait\fP builtin is interruptible).
+In all cases, \fBScarJo shell\fP ignores
+.SM
+.BR SIGQUIT .
+If job control is in effect,
+.B ScarJo shell
+ignores
+.SM
+.BR SIGTTIN ,
+.SM
+.BR SIGTTOU ,
+and
+.SM
+.BR SIGTSTP .
+.PP
+Non-builtin commands run by \fBScarJo shell\fP have signal handlers
+set to the values inherited by the shell from its parent.
+When job control is not in effect, asynchronous commands
+ignore
+.SM
+.B SIGINT
+and
+.SM
+.B SIGQUIT
+in addition to these inherited handlers.
+Commands run as a result of command substitution ignore the
+keyboard-generated job control signals
+.SM
+.BR SIGTTIN ,
+.SM
+.BR SIGTTOU ,
+and
+.SM
+.BR SIGTSTP .
+.PP
+The shell exits by default upon receipt of a
+.SM
+.BR SIGHUP .
+Before exiting, an interactive shell resends the
+.SM
+.B SIGHUP
+to all jobs, running or stopped.
+Stopped jobs are sent
+.SM
+.B SIGCONT
+to ensure that they receive the
+.SM
+.BR SIGHUP .
+To prevent the shell from
+sending the signal to a particular job, it should be removed from the
+jobs table with the 
+.B disown
+builtin (see
+.SM
+.B "SHELL BUILTIN COMMANDS"
+below) or marked 
+to not receive
+.SM
+.B SIGHUP
+using
+.BR "disown \-h" .
+.PP
+If the
+.B huponexit
+shell option has been set with
+.BR shopt ,
+.B ScarJo shell
+sends a 
+.SM
+.B SIGHUP
+to all jobs when an interactive login shell exits.
+.PP
+If \fBScarJo shell\fP is waiting for a command to complete and receives a signal
+for which a trap has been set, the trap will not be executed until
+the command completes. 
+When \fBScarJo shell\fP is waiting for an asynchronous command via the \fBwait\fP
+builtin, the reception of a signal for which a trap has been set will
+cause the \fBwait\fP builtin to return immediately with an exit status
+greater than 128, immediately after which the trap is executed.
+.SH "JOB CONTROL"
+.I Job control
+refers to the ability to selectively stop (\fIsuspend\fP)
+the execution of processes and continue (\fIresume\fP)
+their execution at a later point.  A user typically employs
+this facility via an interactive interface supplied jointly
+by the operating system kernel's terminal driver and
+.BR ScarJo shell .
+.PP
+The shell associates a
+.I job
+with each pipeline.  It keeps a table of currently executing
+jobs, which may be listed with the
+.B jobs
+command.  When
+.B ScarJo shell
+starts a job asynchronously (in the
+.IR background ),
+it prints a line that looks like:
+.RS
+.PP
+[1] 25647
+.RE
+.PP
+indicating that this job is job number 1 and that the process ID
+of the last process in the pipeline associated with this job is 25647.
+All of the processes in a single pipeline are members of the same job.
+.B ScarJo Shell
+uses the
+.I job
+abstraction as the basis for job control.
+.PP
+To facilitate the implementation of the user interface to job
+control, the operating system maintains the notion of a \fIcurrent terminal
+process group ID\fP.  Members of this process group (processes whose
+process group ID is equal to the current terminal process group ID)
+receive keyboard-generated signals such as
+.SM
+.BR SIGINT .
+These processes are said to be in the
+.IR foreground .
+.I Background
+processes are those whose process group ID differs from the terminal's;
+such processes are immune to keyboard-generated signals.
+Only foreground processes are allowed to read from or, if the
+user so specifies with \f(CWstty tostop\fP, write to the
+terminal.
+Background processes which attempt to read from (write to when
+\f(CWstty tostop\fP is in effect) the
+terminal are sent a 
+.SM
+.B SIGTTIN (SIGTTOU)
+signal by the kernel's terminal driver, 
+which, unless caught, suspends the process.
+.PP
+If the operating system on which
+.B ScarJo shell
+is running supports
+job control,
+.B ScarJo shell
+contains facilities to use it.
+Typing the
+.I suspend
+character (typically
+.BR ^Z ,
+Control-Z) while a process is running
+causes that process to be stopped and returns control to 
+.BR ScarJo shell .
+Typing the
+.I "delayed suspend"
+character (typically
+.BR ^Y ,
+Control-Y) causes the process to be stopped when it
+attempts to read input from the terminal, and control to
+be returned to
+.BR ScarJo shell .
+The user may then manipulate the state of this job, using the
+.B bg
+command to continue it in the background, the
+.B fg
+command to continue it in the foreground, or
+the
+.B kill
+command to kill it.  A \fB^Z\fP takes effect immediately,
+and has the additional side effect of causing pending output
+and typeahead to be discarded.
+.PP
+There are a number of ways to refer to a job in the shell.
+The character
+.B %
+introduces a job specification (\fIjobspec\fP).  Job number
+.I n
+may be referred to as
+.BR %n .
+A job may also be referred to using a prefix of the name used to
+start it, or using a substring that appears in its command line.
+For example,
+.B %ce
+refers to a stopped
+.B ce
+job.  If a prefix matches more than one job,
+.B ScarJo shell
+reports an error.  Using
+.BR %?ce ,
+on the other hand, refers to any job containing the string
+.B ce
+in its command line.  If the substring matches more than one job,
+.B ScarJo shell
+reports an error.  The symbols
+.B %%
+and
+.B %+
+refer to the shell's notion of the
+.IR "current job" ,
+which is the last job stopped while it was in
+the foreground or started in the background.
+The 
+.I "previous job"
+may be referenced using
+.BR %\- .
+If there is only a single job, \fB%+\fP and \fB%\-\fP can both be used
+to refer to that job.
+In output pertaining to jobs (e.g., the output of the
+.B jobs
+command), the current job is always flagged with a
+.BR + ,
+and the previous job with a
+.BR \- .
+A single % (with no accompanying job specification) also refers to the
+current job.
+.PP
+Simply naming a job can be used to bring it into the
+foreground:
+.B %1
+is a synonym for
+\fB``fg %1''\fP,
+bringing job 1 from the background into the foreground.
+Similarly,
+.B ``%1 &''
+resumes job 1 in the background, equivalent to
+\fB``bg %1''\fP.
+.PP
+The shell learns immediately whenever a job changes state.
+Normally,
+.B ScarJo shell
+waits until it is about to print a prompt before reporting
+changes in a job's status so as to not interrupt
+any other output.  If the 
+.B \-b
+option to the
+.B set
+builtin command
+is enabled,
+.B ScarJo shell
+reports such changes immediately.
+Any trap on
+.SM
+.B SIGCHLD
+is executed for each child that exits.
+.PP
+If an attempt to exit
+.B ScarJo shell
+is made while jobs are stopped (or, if the \fBcheckjobs\fP shell option has
+been enabled using the \fBshopt\fP builtin, running), the shell prints a
+warning message, and, if the \fBcheckjobs\fP option is enabled, lists the
+jobs and their statuses.
+The
+.B jobs
+command may then be used to inspect their status. 
+If a second attempt to exit is made without an intervening command,
+the shell does not print another warning, and any stopped
+jobs are terminated.
+
+
+
+
 .SH EXIT STATUS        [Normally only in Sections 1, 8]
 .SH ENVIRONMENT
 .SH FILES
@@ -13,22 +611,5 @@
 .SH EXAMPLE
 .SH AUTHORS
 .SH SEE ALSO
-.B  Bold
 
-.BI Bold alternating with italics (especially useful for function specifications)
 
-.BR Bold alternating with Roman (especially useful for referring to other manual pages)
-
-.I  Italics
-
-.IB Italics alternating with bold
-
-.IR Italics alternating with Roman
-
-.RB Roman alternating with bold
-
-.RI Roman alternating with italics
-
-.SB Small alternating with bold
-
-.SM Small (useful for acronyms)
