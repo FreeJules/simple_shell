@@ -58,7 +58,7 @@ symbols:
 .P
 .B **********************************************
 .PD
-.SH "'SIMPLE COMMANDS ONLY,' SAYS SCARJO SHELL"
+.SH "'SIMPLE COMMANDS ONL!,' SAYS SCARJO SHELL"
 .PP
 A \fIsimple command\fP is a sequence of optional variable assignments
 followed by \fBblank\fP-separated words and redirections, and
@@ -69,65 +69,23 @@ The remaining words are passed as arguments to the invoked command.
 The return value of a \fIsimple command\fP is its exit status, or
 128+\fIn\^\fP if the command is terminated by signal
 .IR n .
-o.SH "SIMPLE COMMAND EXPANSION"
-When a simple command is executed, the shell performs the following
-expansions, assignments, and redirections, from left to right.
-.IP 1.
-The words that the parser has marked as variable assignments (those
-preceding the command name) and redirections are saved for later
-processing.
-.IP 2.
-The words that are not variable assignments or redirections are
-expanded.  If any words remain after expansion, the first word
-is taken to be the name of the command and the remaining words are
-the arguments.
-.IP 3.
-Redirections are performed as described above under
-.SM
-.BR REDIRECTION .
-.IP 4.
-The text after the \fB=\fP in each variable assignment undergoes tilde
-expansion, parameter expansion, command substitution, arithmetic expansion,
-and quote removal before being assigned to the variable.
-.PP
-If no command name results, the variable assignments affect the current
-shell environment.  Otherwise, the variables are added to the environment
-of the executed command and do not affect the current shell environment.
-If any of the assignments attempts to assign a value to a readonly variable,
-an error occurs, and the command exits with a non-zero status.
-.PP
-If no command name results, redirections are performed, but do not
-affect the current shell environment.  A redirection error causes the
-command to exit with a non-zero status.
-.PP
-If there is a command name left after expansion, execution proceeds as
-described below.  Otherwise, the command exits.  If one of the expansions
-contained a command substitution, the exit status of the command is
-the exit status of the last command substitution performed.  If there
-were no command substitutions, the command exits with a status of zero.
-
 
 .SH "COMMAND EXECUTION"
 After a command has been split into words, if it results in a
-simple command and an optional list of arguments, the following
-actions are taken.
-.PP
-If the command name contains no slashes, the shell attempts to
-locate it.  If there exists a shell function by that name, that
-function is invoked as described above in
-.SM
-.BR FUNCTIONS .
-If the name does not match a function, the shell searches for
-it in the list of shell builtins.  If a match is found, that
+simple command and an optional list of arguments, the shell attempts to
+locate it. ScarJo Shell searches for it in the list of shell builtins.  If a match is found, that
 builtin is invoked.
 .PP
-If the name is neither a shell function nor a builtin,
-and contains no slashes,
+If the name is not a builtin, and contains no slashes,
 .B ScarJo shell
 searches each element of the
 .SM
 .B PATH
 for a directory containing an executable file by that name.
+
+
+.PP
+.P
 .B ScarJo Shell
 uses a hash table to remember the full pathnames of executable
 files (see
