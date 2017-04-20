@@ -43,7 +43,6 @@ int built_ins(char **input, list_t **env_head)
 /**
  * exit_bi - exits shell with given status
  * @line: tokenized line from command line
- * @env_head: pointer to environ list
  * Return: 0 on success, 1 on error
  */
 int exit_bi(char **line)

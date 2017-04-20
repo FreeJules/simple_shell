@@ -41,8 +41,7 @@ char **path_dirs_array(list_t **env_head)
  */
 char *cmd_in_path(char *str, list_t **env_head)
 {
-	char **path_dirs;
-	char *cmd;
+	char **path_dirs, *cmd;
 	int i, j, cmdl, strl;
 	list_t *tmp;
 
