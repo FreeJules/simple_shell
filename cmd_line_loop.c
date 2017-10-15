@@ -1,4 +1,15 @@
 #include "shell.h"
+#include <signal.h>
+/**
+ * intHandler - handles Ctrl+C
+ * @sig: the signal
+ * Return: none
+ */
+void intHandler(__attribute__((unused))int sig)
+{
+	return;
+}
+
 /**
  * cmd_line_loop - calls getline until user enters exit or EOF(ctrl^D)
  * @buffer: pointer to buffer to store input
@@ -13,6 +24,7 @@ int cmd_line_loop(char *buffer, char *line, list_t **env_head)
 	list_t *tmp;
 
 	tmp = *env_head;
+	signal(SIGINT, intHandler);
 	while (1)
 	{
 		clear_buffer(buffer);
